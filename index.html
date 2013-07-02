@@ -1,52 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: base
+title: Home
+---
 
-<head>
-  <title>CS Tutoring Center</title>
-  <script src="http://code.jquery.com/jquery.js"></script>
-  <script>activeid = "home";</script>
-</head>
-
-<body>
-
-<!-- Beg: Page Container //-->
-<div class="container">
-
-  <!-- Beg: Page Header //-->
-  <br/>
-  <div class="hero-unit">
+<!-- Beg: Page Header //-->
+<br/>
+<div class="hero-unit">
     <h1>CS Tutoring Center</h1>
     <br/>
-    <p>Welcome to the CS Tutoring Center, which provides peer-to-peer support for students in lower division computer science courses.</p>
-  </div>
-  <!-- End: Page Header //-->
+    <p class="lead">Welcome to the CS Tutoring Center, which provides peer-to-peer support for students in lower division computer science courses.</p>
+</div>
+<!-- End: Page Header //-->
 
-  <!-- Beg: Page Body //-->
-  <div class="row-fluid">
+<!-- Beg: Page Body //-->
+<div class="row-fluid">
     <div class="span4">
-      <h2>Latest Tweets</h2>
+        <h2>Latest Tweets</h2>
 
-      <!-- Beg: Twitter Widget //-->
-      <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23USFCA+%23CSTutors" data-widget-id="344885902637678592">Tweets about "#USFCA #CSTutors"</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      <!-- End: Twitter Widget //-->
-
+        <!-- Beg: Twitter Widget //-->
+        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23USFCA+%23CSTutors" data-widget-id="344885902637678592">Tweets about "#USFCA #CSTutors"</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <!-- End: Twitter Widget //-->
     </div>
 
     <div class="span8">
-      <h2>Upcoming Events</h2>
+        <h2>Upcoming Events</h2>
 
-      <!-- Beg: Calendar Widget //-->
-      <iframe src="weekly.html" style="border-width:0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
-      <!-- End: Calendar Widget //-->
+        <!-- Beg: Calendar Widget //-->
+        <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=cs.usfca.edu_0vp77rogo6di14mf3oi8ppmqs8%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FLos_Angeles" style=" border-width:0 " width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+        <!-- End: Calendar Widget //-->
     </div>
-  </div>
-  <!-- End: Page Body //-->
-
 </div>
-<!-- End: Page Container //-->
-
-<!-- Load Template Using jQuery //-->
-<script src="js/cstutors.js"></script>
-</body>
-</html>
+<!-- End: Page Body //-->

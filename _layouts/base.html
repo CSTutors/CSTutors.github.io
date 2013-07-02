@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>{{ site.name }}</title>
+
+{% include bootstrap.html %}
+
+<link rel="stylesheet" href="{{ site.url }}/css/syntax.css">
+<link rel="stylesheet" href="{{ site.url }}/css/cstutors.css">
+</head>
+
+<body>
+{% include navbar.html %}
+
+<!-- Beg: Page Container //-->
+<div class="container">
+{{ content }}
+
+{% include footer.html %}
+</div>
+<!-- End: Page Container //-->
+
+</body>
+</html>
+

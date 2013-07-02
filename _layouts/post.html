@@ -1,0 +1,14 @@
+---
+layout: base
+---
+
+<!-- Beg: Page Header //-->
+<h1 class="page-header">{{ page.title }}</h1>
+<p class="muted text-right" style="margin-top: -4ex;"><small><em>by {{ page.author }} on {{ page.date | date: "%b %Y" }}</em></small></p>
+
+<p class="lead">{{ page.lead }}</p>
+<!-- End: Page Header //-->
+
+<!-- Beg: Page Body //-->
+{{ content }}
+<!-- End: Page Body //-->

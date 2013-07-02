@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>CS Tutoring Center</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Beg: Bootstrap //-->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
+<!-- End: Bootstrap //-->
+
+<!-- Beg: Custom Styles //-->
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+<link href="/css/cstutors.css" rel="stylesheet">
+<!-- End: Custom Styles //-->
+
+
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/cstutors.css">
+</head>
+
+<body>
+<!-- Beg: Navigation //-->
+<div class="navbar navbar-static-top navbar-inverse">
+    <div class="navbar-inner">
+
+        <!-- Shown When Collapsed //-->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        Navigation <i class="icon-chevron-down icon-white"></i>
+        </a>
+
+        <a class="brand" href="#">CS Tutoring Center</a>
+
+        <!-- Shown When Expanded //-->
+        <div class="nav-collapse collapse">
+
+            <ul class="nav pull-left">
+                <li ><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+
+                <li ><a href="/tutors/"><i class="icon-user icon-white"></i> Tutors</a></li>
+
+                <li ><a href="/calendar/"><i class="icon-calendar icon-white"></i> Calendar</a></li>
+
+                <li ><a href="/resources/"><i class="icon-book icon-white"></i> Resources</a></li>
+            </ul>
+
+            <ul class="nav pull-right">
+                <li ><a href="/about/"><i class="icon-info-sign icon-white"></i> About</a></li>
+
+                <li ><a href="/contact/"><i class="icon-envelope icon-white"></i> Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!-- End: Navigation //-->
+
+
+<!-- Beg: Page Container //-->
+<div class="container">
+<!-- Beg: Page Header //-->
+<h1 class="page-header">About CS Accounts</h1>
+<p class="muted text-right" style="margin-top: -4ex;"><small><em>by Sophie Engle on Jul 2013</em></small></p>
+
+<p class="lead">This guide will explain the difference between your USF Connect account and your CS account, as well as how to check if your account is setup.</p>
+<!-- End: Page Header //-->
+
+<!-- Beg: Page Body //-->
+<h2>Account Basics</h2>
+
+<p>Your CS account shares the same username as your USF Connect account, but <em>different</em> passwords. You should use your CS account for the following purposes:</p>
+
+<ul>
+    <li><p>Logging into the computers in the Kudlick classroom, located in Harney Science Center room 235.</p></li>
+
+    <li><p>Logging into the computers in the Computer Science lab, located in Harney Science Center room 530.</p></li>
+
+    <li><p>Logging into the lab computers remotely.</p></li>
+
+    <li><p>Accessing your Subversion (SVN) code repository.</p></li>
+</ul>
+
+<p>Alternatively, you use your USF Connect username and password to login to USF Connect and access your <code>@dons.usfca.edu</code> email and other university-wide resources.</p>
+
+<h2>Logging In</h2>
+
+<p>Your username will always be the same as your USF Connect username. You can determine your username by looking at the part before <code>@dons.usfca.edu</code> in your USF email address. For example, if my email address is <code>sjengle@dons.usfca.edu</code> then my username will be <code>sjengle</code>.</p>
+
+<p>Your initial password will be the <b>LAST</b> six digits of your student ID. Since your student ID is 8 digits, remove the first two digits from your student ID (usually 20) and use the remaining digits as your password. For example, if your student ID is <code>20123456</code>, then your initial password will be <code>123456</code>.</p>
+
+<p>You should change your password after logging in for the first time. You can do this by opening a Terminal window and entering <code>passwd</code> at the command line <em class="muted">(note the spelling)</em>. Follow the prompts to choose a new password.</p>
+
+<h2>Troubleshooting</h2>
+
+<p>When you register for a computer science class, a CS account will be automatically created for you. However, if you registered late it is possible an account has not yet been setup.</p>
+
+<p>If you are having trouble logging in, there is a simple test to determine if you have an account. Try entering the following link into your web browser, <b>replacing <code>test</code> with your CS username</b>:</p>
+
+<pre>http://www.cs.usfca.edu/~test</pre>
+
+<p>For example, if my USF Connect and CS account username is <code>sjengle</code>, then I would try the link <code>http://www.cs.usfca.edu/~sjengle</code> to test my account.</p>
+
+<p>If you have an account setup, you should see something like this:<p>
+
+<p><img src="/assets/about-test.png" class="img-polaroid"></p>
+
+<p>If you see the above image, then you have an account setup. If you are unable to login, double check that you are trying to login using the LAST six digits of your student ID.</p>
+
+<p>Your account is not setup yet if you see something like this instead:</p>
+
+<p><img src="/assets/about-nowhere.png" class="img-polaroid"></p>
+
+<p>If this is the case, please contact <a href="http://cs.usfca.edu/support.html">CS Support</a> at <a href="mailto:support@cs.usfca.edu">support@cs.usfca.edu</a> to have a CS account setup for you.</p>
+
+<!-- End: Page Body //-->
+
+
+<!-- Beg: Page Footer //-->
+<p class="footer clearfix"><a href="http://usfca.edu/">University of San Francisco</a> &bullet; <a href="http://www.cs.usfca.edu/">Department of Computer Science</a> &bullet; Built with <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>, <a href="http://jekyllrb.com/">Jekyll</a>, and <a href="http://pages.github.com/">GitHub Pages</a>
+</p>
+<!-- End: Page Footer //-->
+
+</div>
+<!-- End: Page Container //-->
+
+</body>
+</html>
+

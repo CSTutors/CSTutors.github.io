@@ -1,0 +1,31 @@
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 15px;
+}
+
+code,
+pre {
+  font-family: "Source Code Pro", monospace;
+}
+
+code {
+  font-size: 100%;
+  font-weight: 300;
+}
+
+.navbar .brand, .lead, .hero-unit {
+  font-weight: 300;
+}
+
+.footer, .footer a, .footer a:hover {
+  color: #bbbbbb;
+}
+
+.footer {
+  font-size: 80%;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 1.5em;
+  border-top: 1px solid #eeeeee;
+}
