@@ -1,0 +1,87 @@
+---
+layout: post
+title:  'Transferring Files'
+author: 'Sophie Engle'
+date:   2013-07-21
+lead: 'There are multiple ways for you to transfer files between your home computer or laptop and the lab computers. The preferred method is to use SVN (Subversion) or Git. Otherwise, you can either use SCP (secure copy) or SFTP (secure file transfer protocol). Each of these options are detailed below.'
+---
+
+<h2>Using SVN or Git</h2>
+
+<p>Using SVN (or Git) is the easiest way to keep your code synchronized between the lab computers and your home computer. See the <a href="{{ site.url }}/resources/">Resources</a> page for all of the guides available on using SVN.</p>
+
+<p>If you just need to transfer a file onto the lab computers for testing purposes, and already have that file committed to SVN, you can run the following command:</p>
+
+<pre>
+svn export https://www.cs.usfca.edu/svn/username/filepath
+</pre>
+
+<p>Replace <code>username</code> with your CS username and <code>filepath</code> with the remainder of the path to your file on your code repository. (You can always get the full path of your file by browsing your svn repository via a browser.)</p>
+
+<p>For example, the following screenshot demonstrates how to export a copy of just the <code>project2.jar</code> file onto the lab computer:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/transferring-svn.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/transferring-svn.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>If you want to consistently keep your home computer and lab computers synchronized, you should checkout a working copy instead.</p>
+
+<h2>Using SCP</h2>
+
+<p>Mac and Linux systems already have a tool installed called <code>scp</code> that you can use to securely copy files from the lab computers to your own home computer. If you are on a Windows system, I recommend one of the other methods in this guide.</p>
+
+<p>To transfer all files in a source directory on your local home computer to the lab computer, use the following command from your home computer:</p>
+
+<pre>
+scp -r localdir username@stargate.cs.usfca.edu:remotedir
+</pre>
+
+<p>Replace <code>localdir</code> with the directory on your local computer, <code>username</code> with your CS username, and <code>remotedir</code> with the directory on the lab computer where you want the files to be placed.</p>
+
+<p>To transfer all files in a source directory on the lab computer to your home computer, use the following command from your home computer:</p>
+
+<pre>
+scp -r username@stargate.cs.usfca.edu:remotedir localdir
+</pre>
+
+<p>The following screenshot demonstrates sending files using <code>scp</code> first from the local computer to the lab computer, and second from the lab computer to the local computer:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/transferring-scp.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/transferring-scp.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p><em>Both of these transfers are done on the local computer!</em> Also, keep in mind that <code>scp</code> requires the destination directory to already exist. In the example above, the directory <code>~/cs212/</code> had to already exist on the lab computer for the command to work.</p>
+
+<h2>Using SFTP</h2>
+
+<p>You can also install an SFTP client on your computer. There are several free clients for both Windows and Mac. The screenshots below use <a href="http://panic.com/transmit/">Transmit for Mac</a> (which is not free). While each SFTP client will look different, the general settings will be the same.</p>
+
+<p>First, there is usually somewhere to specify the protocol to use. It is important you select SFTP and not just FTP (which isn't secure). Enter your CS username and <code>stargate.cs.usfca.edu</code> as the host name. For example:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/transferring-transmit-login.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/transferring-transmit-login.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>Once you connect, you should see files on your lab computer. Most programs will let you drag-and-drop files between your home computer and the remote computer.</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/transferring-transmit-files.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/transferring-transmit-files.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>There is also a free command-line SFTP client from the <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> group for Windows, but I recommend a GUI program instead.</p>

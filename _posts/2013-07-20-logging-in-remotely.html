@@ -1,0 +1,131 @@
+---
+layout: post
+title:  'Logging in Remotely'
+author: 'Sophie Engle'
+date:   2013-07-20
+lead: 'If you need to test code on the lab computers, you can login to the lab computers remotely and test your code using SSH (Secure Shell). This guide shows you how to SSH into the lab computers.'
+---
+
+<h2>Getting Started</h2>
+
+<p>Before you get started, make sure you know your <a href="{% post_url 2013-07-02-about-cs-accounts %}">CS account</a> username and password.</p>
+
+<p>If you are already familiar with SSH, the basic steps to login remotely are:</p>
+
+<ul>
+    <li><p>Use SSH to log into our gateway <code>stargate.cs.usfca.edu</code> using your CS account username and password.</p></li>
+
+    <li><p>Run <code>rusers -a</code> on the command-line to see which lab machines are available.</p></li>
+
+    <li><p>Use SSH to log into one of the lab machines from the gateway using your CS account username and password.</p></li>
+</ul>
+
+<p>The following sections detail how to SSH using either Windows or Mac. Either way, make sure you look at the <strong><a href="#lab">SSH into Lab Computers</a></strong> section near the bottom for what you need to do once you have logged in for the first time.</p>
+
+<h2><a name="windows"></a>SSH on Windows</h2>
+
+<p class="muted text-center"><small><em>See <a href="#mac">SSH on Mac OSX</a> if you are using Mac OSX instead of Windows.</em></small></p>
+
+<p>If you are using Windows, you should first download and install <strong>PuTTY</strong> at <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">http://www.chiark.greenend.org.uk/~sgtatham/putty/</a>. Once installed, open up PuTTy. Enter <code>stargate.cs.usfca.edu</code> as the Host Name:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/remote-putty-config.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/remote-putty-config.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>Click the "Open" button. You may receive a warning (see below).</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/remote-putty-alert.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/remote-putty-alert.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>Go ahead and click "Accept". When prompted, enter your username and password. <span class="text-error">You will not see the text you type when entering your password.</span> (This prevents someone from looking over your shoulder and seeing your password.)</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/remote-putty-password.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/remote-putty-password.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>Once you have successfully logged in, you will see a welcome message similar to the following:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/remote-putty-welcome.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/remote-putty-welcome.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>Read the message! <span class="text-error">You should not start working on this machine.</span> Skip to the section <strong><a href="#lab">SSH into Lab Computers</a></strong> below for how to log into one of the lab computers.</p>
+
+<h2>SSH on Mac OSX</h2>
+
+<p>You should not need to install anything special to start using SSH. Open up a Terminal window and enter the following command (replacing <code>test</code> with your username):</p>
+
+<pre>
+ssh test@stargate.cs.usfca.edu
+</pre>
+
+<p>For example, my username is <code>sjengle</code> so my Terminal window looks as follows:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/remote-mac-ssh.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/remote-mac-ssh.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>When prompted, enter your username and password. <span class="text-error">You will not see the text you type when entering your password.</span> (This prevents someone from looking over your shoulder and seeing your password.)</p>
+
+<p>Once you have successfully logged in, you will see a welcome message similar to the following:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/remote-mac-welcome.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/remote-mac-welcome.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>Read the message! <span class="text-error">You should not start working on this machine.</span> Read on to the section <strong><a href="#lab">SSH into Lab Computers</a></strong> below for how to log into one of the lab computers.</p>
+
+<h2>SSH into Lab Computers</h2>
+
+<p>For security reasons, our lab computers are not directly accessible from the Internet. This may be a tad confusing, but what you have done so far is login remotely to our gateway server named <code>stargate.cs.usfca.edu</code>. <span class="text-error">THIS IS NOT A LAB COMPUTER.</span> Please do not use it to work on your homework and projects.</p>
+
+<p>What you must do next is login to a lab computer <em>from</em> our gateway server. You should be at the part where you see a welcome message, no matter whether you are using Windows or Mac OSX. The following screenshots are using Mac OSX, but the text displayed will be similar on Windows and PuTTY.</p>
+
+<p>Next, you need to choose which lab machine to SSH into next. You do not want to choose a machine that another student is already using, since it may be slow. To see which machines are up and have no remote users, run <code>rusers -a</code> as instructed in the welcome message. You will see something similar to this:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/remote-mac-rusers.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/remote-mac-rusers.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>Computer names will always be <code>hrnAAABB</code> where <code>AAA</code> is the room (235 or 530) and <code>BB</code> is the machine number. In the image above, <code>hrn23501</code> and <code>hrn23502</code> have no users, and <code>hrn23503</code> does not show up indicating it is offline. There is one user test logged into <code>hrn23505</code> and two users <code>test</code> and <code>sjengle</code> are logged into <code>hrn53002</code>.</p>
+
+<p>Choose a machine with no remote users logged in and ssh into that machine. For example, we can run the command <code>ssh hrn23501</code> to ssh into that machine:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/remote-mac-labssh.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/remote-mac-labssh.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>Enter your password when prompted. At this point, you are ready to start working on the lab computers remotely.</p>
