@@ -1,0 +1,47 @@
+---
+layout: post
+title:  'Why Use Revision Control?'
+author: 'Sophie Engle'
+date:   2013-07-31
+lead: 'Every significant software project, be it open source or closed source, uses some sort of revision control system. However, even small-scale projects (including programming homework) benefit from a version control system.'
+---
+
+<h2>Summary</h2>
+
+<p>In short, version control systems provide:</p>
+
+<ul>
+    <li>Incremental backup</li>
+    <li>Central code repository</li>
+    <li>Track changes</li>
+    <li>Branches</li>
+    <li>And more...</li>
+</ul>
+
+<p>Subversion (SVN) is an open source version/revision control system. You can learn more about SVN in general at <a href="http://subversion.apache.org/">subversion.apache.org</a>. SVN replaces Concurrent Versions System (CVS). SVN is especially powerful in collaborative environments. Many large software projects use SVN to handle collaborative changes, branching, merging, and so on.</p>
+
+<p>While Subversion is still widely used, many software projects are moving to Git, which is a newer distributed revision control system. While this guide is specific to SVN, many of the same concepts hold in Git.<p>
+
+<h2>Incremental Backup</h2>
+
+<p>Using a version control system gives you a short-term and long-term undo button for your code. Every time you commit your source code, you are making a new backup copy of your source code. If you introduced a bug in the latest version of your code, you are able to roll-back your code to the last working revision. Imagine doing anything on your computer without the undo button. Why not extend that functionality further? This is especially useful if you accidentally delete your code (it is easier than you think), break your code (happens often), or decide to roll back to an older and more stable approach.</p>
+
+<h2>Central Code Repository</h2>
+
+<p>SVN also solves the headache of having code in multiple places. For example, you'll be working on the lab computers during class and most likely on your own home computers or laptops outside of class. SVN provides a central repository of your code, so that you are able to access and sync your changes across computers. You just need to commit your code when you are done at the lab, and then checkout or update the code when you move to your home computer.</p>
+
+<p>Since both the instructor and teacher assistant have access to your SVN repository, it also provides a secure way of sharing your code with the instructor or teacher assistant when you need help. Just make sure nobody else (like your other classmates) has access to your repository!</p>
+
+<h2>Tracking Changes</h2>
+
+<p>SVN is also useful when you must maintain source code. When you commit your code to your SVN repository, you have the option of leaving a message describing your changes. This can be very useful when you need to figure out why you made a particular change, especially when it comes to finding and fixing bugs.</p>
+
+<p>You can also diff two versions of your code to see exactly what changed. For example, suppose you know you introduced a bug when you moved from version 2 to version 3 but aren't sure exactly where. You can take the diff of both versions to see exactly what you changed and narrow down the bug's location.</p>
+
+<h2>Branching Out</h2>
+
+<p>Suppose your code is stable and tested, but you want to see if you can speed up the code. You can create a separate branch of your code and work on that branch. You still have a stable version of your source code to back to if needed, but are also able to safely try out new solutions in your branch. If you like those changes, you can always merge your new code back to the trunk (the primary version of your code). This is especially useful when working on a deadline. You can keep one working version ready to submit if you run out of time, but can also work on improving your code in the meantime.</p>
+
+<h2>Industry Standard</h2>
+
+<p>Whether it be SVN or Git, just about every significant project will use some sort of version control system. This is especially true in industry. You will likely be expected to be familiar with a version control system by the time you begin your job search. If you choose to move on to graduate school, many software projects in academia also use version control systems. The sooner you start using version control regularly, the better!</p>

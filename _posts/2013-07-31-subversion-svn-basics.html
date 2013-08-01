@@ -1,0 +1,49 @@
+---
+layout: post
+title:  'Subversion (SVN) Basics'
+author: 'Sophie Engle'
+date:   2013-07-31
+lead: 'This guide discusses some important concepts when it comes to working with SVN. Some of these concepts are explored further in the Using SVN via Command Line guide.'
+---
+
+<h2>Working Copy</h2>
+
+<p>Your code repository on the SVN server is where your code is centrally stored, but not where you actually work on the code. For that, you need to create a <strong>working copy</strong> of your code on your local system. You checkout a working copy of your code using the <code>svn checkout</code> command. This will make a copy of your code repository on your local system, and SVN will watch the changes you make to this working copy. You can then use various SVN commands to keep your working copy and code repository synchronized.</p>
+
+<h2>Watching Files</h2>
+
+<p>SVN will automatically "watch" the files you checkout from your code repository for changes. If you add new files or directories, you need to let SVN know to watch these files too. (Unless you are using Eclipse, which knows which files to include and which temporary files to exclude from the watch list.)</p>
+
+<p>You can automatically create and add a new directory to the SVN watch list by using the <code>svn mkdir</code> command. Otherwise, you need to use the <code>svn add</code> command on each file and directory you added since you last checked out or updated your code.</p>
+
+<p>Any file in your working copy that is being watched will be in one of the following states:</p>
+
+<ul>
+    <li><p><strong>Unchanged</strong> (i.e. no changes made in working copy) and <strong>current</strong> (i.e. there is not a newer version in the SVN repository)</p></li>
+
+    <li><p><strong>Locally changed</strong> (i.e. changes have been made in working copy) and <strong>current</strong> (i.e. there is not a newer version in the SVN repository)</p></li>
+
+    <li><p><strong>Unchanged</strong> (i.e. no changes made in working copy) and <strong>out of date</strong> (i.e. there is a newer version in the SVN repository)</p></li>
+
+    <li><p><strong>Locally changed</strong> (i.e. changes have been made in working copy) and <strong>out of date</strong> (i.e. there is a newer version in the SVN repository)</p></li>
+</ul>
+
+<p>Exactly how each SVN command works depends on the state of each file. For example, if a file is <strong>unchanged</strong> and <strong>out of date</strong>, that means your working copy has an old version of that file and a newer version is available on the code repository. In this case, you must run the <code>svn update</code> command to fetch/pull the latest version of the file from the repository.</p>
+
+<p>If a file is instead <strong>locally changed</strong> and <strong>current</strong>, then there are new changes made in your working copy that have not yet made it to the central code repository. In this case, you must run the <code>svn commit</code> command to save those changes to the repository. Every time you commit files in your working copy, you create a new version of your code.</p>
+
+<p>Both the <code>svn update</code> and <code>svn commit</code> commands will do nothing if your file is <strong>unchanged</strong> and <strong>current</strong>. In that case, you have the latest copy of the file from the server in your working copy and have yet to make any new changes.</p>
+
+<p>If, however, you have a file that is both <strong>locally changed</strong> and <strong>out of date</strong>, you will run into a <span class="text-error"><strong>conflict</strong></span>. In this case, you had an old version of the file in your working copy and made changes to that file. Any attempt to run <code>svn commit</code> in this situation will fail. If you instead try to run <code>svn update</code>, SVN will attempt to merge the changes together <em>if possible</em>. In general, you want to avoid this situation as the clean up can be time consuming.</p>
+
+<h2>Using Subversion</h2>
+
+<p>We have the SVN server running on the CS network. You need to interact with this server using an SVN client. You have the following options:</p>
+
+<ul>
+    <li>Using SVN via Command Line</li>
+    <li>Using SVN via Eclipse and Subclipse</li>
+    <li>Using SVN via Another Client</li>
+</ul>
+
+<p>There are several other SVN clients available for your specific operating system. Many people running Windows prefer the free <a href="http://tortoisesvn.net/">TortoiseSVN</a> program.</p>
