@@ -7,11 +7,14 @@ body {
 code,
 pre {
   font-family: "Source Code Pro", monospace;
+  color: #383838;
+  font-size: 100%;
+  font-weight: 300;
 }
 
 code {
-  font-size: 100%;
-  font-weight: 300;
+  padding: 0 2px;
+  margin: 0;
 }
 
 .navbar .brand, .lead, .hero-unit {

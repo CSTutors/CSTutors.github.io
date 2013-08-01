@@ -1,0 +1,505 @@
+---
+layout: post
+title:  'Using Linux via Command Line'
+author: 'Sophie Engle'
+date:   2013-07-31
+lead: 'The lab machines run both Windows and Linux, but most classes use primarily Linux. If you are accessing these computers remotely, you will need to get accustom with using Linux via the command line. This all-text interface can be overwhelming at first, but with a few basics you can start navigating the command-line interface with enough knowledge to learn what you need when you need it.'
+---
+
+<h2>Console</h2>
+
+<p>To get started, open up a Terminal window (from the Applications menu) on a lab computer. Alternatively, you may log into a lab computer remotely using SSH (see the other guides). Either way, I will refer to your interface as the console window. The <b>console</b> is a text-based interface where we can enter commands. These commands run programs with input that we provide, and then displays the output of that program.</p>
+
+<p>Before we enter any commands, you should understand a little more about the console output. Look at the window below:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-console.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-console.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>The text in the square braces <code>[</code> and <code>]</code> gives you basic information such as your username, the name of the computer you are logged into, and your current directory or folder. In the output above, the user is <code>sjengle</code> and we start in the <code>~</code> directory on the <code>stargate</code> computer. After executing the <code>ssh</code> command, we change to the <code>hrn23501</code> lab computer.</p>
+
+<p>The dollar sign <code>$</code> symbol in the above screenshot is the <b>prompt</b>. This is where you type in commands (think of it as the computer <i>prompting</i> you for what to do next). In the output above, the command <code>ssh hrn23501</code> is entered at the prompt. Below it is the output of the ssh program. You can tell the difference between commands you have typed and the output by looking at where the <code>$</code> is located. <span class="text-warning">If you copy and paste any commands in this guide, do <i>not</i> include the <code>$</code> prompt symbol!</span></p>
+
+<h2>Manual Pages</h2>
+
+<p>One of the most important command you should know is <code>man</code>, which stands for <u>man</u>ual. If you ever forget how to run a program, you can look at the manual page (or <code>man</code> page) for that program using this command. If you just type <code>man</code> and press enter, you get the following output:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ man
+What manual page do you want?
+</pre>
+
+<p>You can type <code>man man</code> to get the manual page for the manual program itself. However, it is more useful to get the manual pages for other programs. For example, consider the program <code>date</code>, which displays the current date and time. If we just enter the command <code>date</code> we get back output similar to:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ date
+Sat Sep 15 13:40:29 PDT 2012
+</pre>
+
+<p>Are there any other ways we can use this program? To find out, enter <code>man date</code> at the prompt. You'll see output that looks like this:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-man-date1.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-man-date1.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>All <code>man</code> pages have a similar format. It starts with a description, gives a usage summary, goes into some details, shows an example, and suggests other similar programs to look at. You can either scroll through the <code>man</code> page with the up and down arrows, or press the spacebar to advance by a page at a time.</p>
+
+<p>Go ahead and scroll down a bit, until you see the <code>-u</code> text:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-man-date2.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-man-date2.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>This is a flag (also called a command-line argument or parameter) that we can pass to the <code>date</code> program to change how it outputs the date. The <code>man</code> pages will always provide a list of flags you can pass to a program to change its behavior.</p>
+
+<p>Press <code>q</code> to quit and go back to the command-line prompt. Enter <code>date -u</code> at the prompt to see how the date format changes:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ date -u
+Sat Sep 15 20:40:57 UTC 2012
+</pre>
+
+<p>The following shows the console output after running all of the above commands:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-console-man-date.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-console-man-date.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>Even seasoned Linux users occasionally forget the flags you can specify to a program, and rely on <code>man</code> pages to look it up.</p>
+
+<h2>Absolute and Relative Paths</h2>
+
+<p>In the console, you are always executing commands from a <b>directory</b> (or folder). When you first login, you are in your <b>home directory</b>. This is usually indicated by the <code>~</code> (tilde) symbol. However, this is just a shortcut. To see the full path of your home directory, enter the command <code>pwd</code> (for <u>p</u>rint <u>w</u>orking <u>d</u>irectory) at the prompt:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ pwd
+/home/sjengle
+</pre>
+
+<p>My home directory is <code>/home/sjengle</code>. This is the <b>absolute path</b> of that directory. To understand this what this means, you need to learn a little more about directory notation.</p>
+
+<p>Think of directories as a tree. The tree has a <b>root directory</b>, which is the very first directory on that system. Inside the root directory, there may be multiple <b>subdirectories</b> (think of them as branches). Just like one branch on a tree may split into multiple little branches, every directory in our system can have multiple subdirectories. The absolute path gives us the whole path from the root directory to the <b>current</b> or <b>working directory</b> (the directory we are currently executing commands from).</p>
+
+<p>The <code>/</code> symbol separates individual folder names. So, the absolute path <code>/home/sjengle</code> indicates that in the root directory <code>/</code> there is a subdirectory named <code>home</code> and in the directory <code>home</code> there is another subdirectory named <code>sjengle</code>.</p>
+
+<p>A <b>relative path</b> is a path given <i>relative</i> to the current directory. There are two special symbols that we can use when it comes to relative paths. The dot <code>.</code> symbol is a shortcut for the current directory, and two dots <code>..</code> is a shortcut for the parent directory. For example, if the current directory is <code>/home/sjengle</code>, then <code>.</code> is a shortcut for <code>/home/sjengle</code> and <code>..</code> is a shortcut for <code>/home</code>. You can combine any number of <code>.</code> and <code>..</code> symbols to build a relative path.</p>
+
+<h2>Directory Commands</h2>
+
+<p>How do we tell what files and subdirectories are in a directory? For this, we can use the <code>ls</code> command, which stands for <u>l</u>i<u>s</u>t. If we enter <code>ls</code> it will <i>list</i> all of the files and subdirectories in the current directory. For example, we can list everything currently in <code>/home/public</code> directory:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ ls /home/public
+UninstallWinClient.exe  cs315  cs682                   math367
+appengine_launcher      cs326  cs685                   nltk-2.0b6
+cs110                   cs601  gnome3disable.sh        nltk_data
+cs112                   cs636  google_app_engine       nx
+cs171                   cs652  google_app_engine1.3.4  pizza_night
+cs212                   cs662  google_app_engine1.4.1  profile.vbs
+cs221                   cs680  google_app_engine1.4.3  projects
+</pre>
+
+<p class="muted"><i>(The exact output may change over time.)</i></p>
+
+<p>You can see there are several subdirectories in the root directory. However, this is only part of the picture. There are several hidden directories and files as well. To show hidden files and directories, you have to pass the <code>-a</code> (all) flag to <code>ls</code> as follows:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ ls -a /home/public
+.                           cs315              google_app_engine1.3.4
+..                          cs326              google_app_engine1.4.1
+.com.apple.smb.streams.off  cs601              google_app_engine1.4.3
+.snapshot                   cs636              math367
+UninstallWinClient.exe      cs652              nltk-2.0b6
+appengine_launcher          cs662              nltk_data
+cs110                       cs680              nx
+cs112                       cs682              pizza_night
+cs171                       cs685              profile.vbs
+cs212                       gnome3disable.sh   projects
+cs221                       google_app_engine
+</pre>
+
+<p>Above, you can see directories and files that were hidden before. There are several other flags you can pass to <code>ls</code> as well. For example, you can see the result of the <code>--color</code> flag in the screenshot below:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-ls-color.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-ls-color.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>We can change our current directory using the <code>cd</code> (or <u>c</u>hange <u>d</u>irectory) program. For example, enter <code>cd /home/public</code> at the prompt and notice how the text in the square brackets <code>[ ]</code> changes:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ cd /home/public
+[sjengle@hrn23501 public]$
+</pre>
+
+<p>Also, if we execute <code>ls</code> from this directory, we show the same thing as we did earlier when we did when entering <code>ls /home/public</code> at the command line. That is because our current directory has changed, and when given no parameters, <code>ls</code> will always list the files and subdirectories of the current directory. (See the above image for an example.)</p>
+
+<p>If you wanted to change back to your home directory, you can do <code>cd ~</code> from anywhere. You can also use relative paths. For example, <code>cd ..</code> changes to the parent directory. For example:</p>
+
+<pre>
+[sjengle@hrn23501 public]$ pwd
+/home/public
+[sjengle@hrn23501 public]$ cd ~
+[sjengle@hrn23501 ~]$ pwd
+/home/sjengle
+[sjengle@hrn23501 ~]$ cd ..
+[sjengle@hrn23501 home]$ pwd
+/home
+</pre>
+
+<p>You can create and delete directories using the <code>mkdir</code> (<u>m</u>a<u>k</u>e <u>dir</u>ectory) and <code>rmdir</code> (<u>r</u>e<u>m</u>ove <u>dir</u>ectory) commands. For example, try the following:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ cd ~
+[sjengle@hrn23501 ~]$ ls
+cs110  cs212  cs326  public  web
+[sjengle@hrn23501 ~]$
+[sjengle@hrn23501 ~]$ mkdir temp
+[sjengle@hrn23501 ~]$ ls
+cs110  cs212  cs326  public  temp  web
+[sjengle@hrn23501 ~]$
+[sjengle@hrn23501 ~]$ rmdir temp
+[sjengle@hrn23501 ~]$ ls
+cs110  cs212  cs326  public  web
+</pre>
+
+<p class="muted"><i>(The exact output will differ depending on the contents of your home directory.)</i></p>
+
+<p>You cannot remove a non-empty directory. If there are files in that directory, you must remove them first. We'll discuss various commands related to files next.</p>
+
+<h2>File Commands</h2>
+
+<p>There are several commands for displaying and manipulating text files. For example, you can use the <code>cat</code> command (con<u>cat</u>enate and print) if you just need to see what is in a small text file. Consider the following example:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-cat-hello-goodbye.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-cat-hello-goodbye.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p class="muted"><i>(For the above example to work, you need to already have files <code>hello.txt</code> and <code>goodbye.txt</code> in your directory.)</i></p>
+
+<p>You can also use <code>cp</code> to make a <u>c</u>o<u>p</u>y of a file, <code>mv</code> to <u>m</u>o<u>v</u>e a file to a new location, and <code>rm</code> to <u>r</u>e<u>m</u>ove a file entirely. For example:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-ls-cp-mv-rm.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-ls-cp-mv-rm.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>It can be slow and tedious to remove one file at a time. Next, we discuss how to use the wildcard symbol to speed up the process.</p>
+
+<h2>Wildcards</h2>
+
+<p>We can use the <code>*</code> (asterisk) symbol as a <b>wildcard</b> in many commands. (The "wild card" in a card game is a card that can substitute any other card in the deck.) The asterisk is like a placeholder, and using it to form a pattern can match multiple files at once. For example, if we list all of the files and subdirectories in <code>/home/web/sjengle</code> we get:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ ls /home/web/sjengle
+contact.html  cs107  cs245  images      research.html
+courses       cs110  cs326  index.html  teaching.html
+crawltest     cs212  css    people      vitae.html
+</pre>
+
+<p>If we only want to see the files that end with <code>.html</code>, we can use <code>*.html</code> as the pattern:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ ls /home/web/sjengle/*.html
+/home/web/sjengle/contact.html   /home/web/sjengle/teaching.html
+/home/web/sjengle/index.html     /home/web/sjengle/vitae.html
+/home/web/sjengle/research.html
+</pre>
+
+<p>Or, suppose this is the output for the <code>images</code> directory:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ ls /home/web/sjengle/images
+background.png  exitonly.jpg    index.html      research.jpg
+books.jpg       goldengate.jpg  olivetrees.jpg  sophie.jpg
+</pre>
+
+<p>If we only want to see images that start with <code>b</code>, we can use <code>b*</code> as the pattern:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ ls /home/web/sjengle/images/b*
+/home/web/sjengle/images/background.png  /home/web/sjengle/images/books.jpg
+</pre>
+
+<p>The <code>*</code> symbol is very convenient, but also <strong>dangerous</strong>. <strong class="text-error">Entering <code>rm -rf *</code> will delete all of your files irrecoverably (do <i>not</i> test this)</strong>. Be careful where and how you use wildcards!</p>
+
+<p>The entire wildcard example is below:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-wildcards.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-wildcards.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>You can try out this example yourself&mdash;my <code>web</code> directory is readable by all users. To explain precisely what this means, we need to discuss file permissions next.</p>
+
+<h2>Permissions</h2>
+
+<p>We can change the permissions on a file or directory to change who is able to perform certain actions. You can view the current permissions of any file or directory using the <code>ls</code> command with the <code>-l</code> flag. For example, try <code>ls -l /home/web/sjengle</code> to display a "long listing" of the directory:</p>
+
+<pre>
+[sjengle@hrn23501 temp]$ ls -l /home/web/sjengle
+total 136
+-rw-r--r-- 1 sjengle faculty  3820 Jan 26  2012 contact.html
+drwxr-xr-x 4 sjengle faculty  8192 Jan  7  2011 courses
+drwxr-xr-x 3 sjengle faculty  1024 May 13 21:16 crawltest
+drwxr-xr-x 2 sjengle faculty  1024 Nov  9  2011 cs107
+drwxr-xr-x 2 sjengle faculty  8192 Apr 15 14:23 cs110
+drwxr-xr-x 2 sjengle faculty  1024 Jan 16  2012 cs212
+drwxr-xr-x 2 sjengle faculty  8192 Jan 13  2011 cs245
+drwxr-xr-x 2 sjengle faculty  1024 Jan 16  2012 cs326
+drwxr-xr-x 2 sjengle faculty  8192 Oct 31  2011 css
+drwxr-xr-x 2 sjengle faculty  1024 Aug 18  2010 images
+-rw-r--r-- 1 sjengle faculty  3769 Jul 14 11:43 index.html
+drwxr-xr-x 2 sjengle faculty  8192 Jan 17  2011 people
+-rw-r--r-- 1 sjengle faculty  1905 Jan 11  2012 research.html
+-rw-r--r-- 1 sjengle faculty  3258 Jan 11  2012 teaching.html
+-rw-r--r-- 1 sjengle faculty 20827 Apr 20 02:23 vitae.html
+</pre>
+
+<p>The information that is provided is (in order): the file/directory permissions, number of links, owner, group, size, last modified date and time, and name. For example, consider the following line:</p>
+
+<pre>
+-rw-r--r-- 1 sjengle faculty  3769 Jul 14 11:43 index.html
+</pre>
+
+<p>The <code>-rw-r--r--</code> text gives the file permissions, there is 1 link, the owner is <code>sjengle</code>, the group is <code>faculty</code>, the size is 3769 blocks, and the last modified date and time is July 14 at 11:23am.</p>
+
+<p>What does all of this mean? The <b>owner</b> of a file or directory is usually the user that created that file or directory. (You can change the owner using the <code>chown</code> command.) The owner can change the permissions of that file or directory. All users also belong to a <b>group</b>. For example, I belong to the <code>faculty</code> group and have access to certain files that also belong to the <code>faculty</code> group.</p>
+
+<p>The <b>permissions</b> specify the actions that may be performed on that file or directory. The notation, however, can be confusing. The characters used are:</p>
+
+<ul>
+    <li><code>d</code>: indicates the item is for a directory</li>
+    <li><code>r</code>: indicates read access is allowed</li>
+    <li><code>w</code>: indicates write access is allowed</li>
+    <li><code>x</code>: indicates execute access is allowed</li>
+</ul>
+
+<p>So, if a file has <code>rwx</code> permissions, then reading, writing, and executing that file is allowed. Programs are basically special files that you can execute. For example, if you did not have <code>x</code> permissions on the <code>ls</code> file, you could not execute the <code>ls</code> program.</p>
+
+<p>The permissions mean something slightly different for directories. You are unable to access anything in a directory that you do not have <code>r</code> permissions for. You are unable to place folders or remove files in any directory that you do not have <code>w</code> permissions for. You are unable to list the files and subdirectories for any directory that you do not have <code>x</code> permissions for.</p>
+
+<p>The order is also important. The order of the permission text is always as follows:</p>
+
+<ul>
+    <li>1: <code>d</code> if the item is a directory or <code>-</code> otherwise</li>
+    <li>2, 3, 4: whether the <i>owner</i> (the <i>user</i> category) has read, write, and execute permissions</li>
+    <li>5, 6, 7: whether the <i>group</i> has read, write, and execute permissions</li>
+    <li>8, 9, 10: whether everyone else (the <i>other</i> category) has read, write, and execute permissions</li>
+</ul>
+
+<p>So, consider again the following file:</p>
+
+<pre>
+-rw-r--r-- 1 sjengle faculty  3769 Jul 14 11:43 index.html
+</pre>
+
+<p>Since the first character is <code>-</code> we know that <code>index.html</code> is not a directory. The owner, <code>sjengle</code>, has read and write permissions for that file. The group, <code>faculty</code>, has just read permissions. Everyone else has just read permissions.</p>
+
+<p>To change permissions, you must use the <code>chmod</code> command (<u>ch</u>ange <u>mo</u>de). There are two different notations you can use with <code>chmod</code>, symbolic mode or octal mode. I'll demonstrate symbolic mode, where you use special characters to specify the permission you want to change. The characters are:</p>
+
+<ul>
+    <li><p><code>u</code>, <code>g</code>, <code>o</code>, or <code>a</code>: which stands for <i>user</i>, <i>group</i>, <i>other</i>, or <i>all</i>, to specify who you are changing the permissions for. The "user" is the owner of the file, and "all" will change the permissions for the user, group, and other categories</p></li>
+
+    <li><p><code>+</code> or <code>-</code>: which stands for <i>add</i> or <i>subtract</i>, to either add a permission or subtract a permission</p></li>
+
+    <li><p><code>r</code>, <code>w</code>, or <code>x</code>: which stands for <i>read</i>, <i>write</i>, and <i>execute</i>, to specify which permission you are changing</p></li>
+</ul>
+
+<p>For example, suppose I have a file <code>readme.txt</code> as follows:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ ls -l readme.txt
+-rw------- 1 sjengle faculty 0 Sep 15 21:23 readme.txt
+</pre>
+
+<p>I can add (<code>+</code>) read (<code>r</code>) permissions for all (<code>a</code>) as follows:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ chmod a+r readme.txt
+[sjengle@hrn23501 ~]$ ls -l readme.txt
+-rw-r--r-- 1 sjengle faculty 0 Sep 15 21:23 readme.txt
+</pre>
+
+<p>I can remove (<code>-</code>) read (<code>r</code>) permissions for just the other (<code>o</code>) category as follows:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ chmod o-r readme.txt
+[sjengle@hrn23501 ~]$ ls -l readme.txt
+-rw-r----- 1 sjengle faculty 0 Sep 15 21:23 readme.txt
+</pre>
+
+<p>Finally, I can add (<code>+</code>) execute (<code>x</code>) permissions for both the user (<code>u</code>) and group (<code>g</code>) at the same time as follows:<br>
+</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ chmod ug+x readme.txt
+[sjengle@hrn23501 ~]$ ls -l readme.txt
+-rwxr-x--- 1 sjengle faculty 0 Sep 15 21:23 readme.txt
+</pre>
+
+<p>For any of you that are groaning right now about all the shortcuts and abbreviations&mdash;just remember that the next time you type "<code>rofl</code>", "<code>tldr</code>", "<code>ttyl</code>", or "<abbr title="Please don't make me ever use this on you!"><code>lmgtfy</code></abbr>"!</p>
+
+<h2>Other Commands</h2>
+
+<p>There are several other commands you may find useful. For example, if you are logged in to a lab computer remotely and notice the computer seems slow, you may want to see if anyone else is logged into that computer. You can see all of the remote users logged into the current computer using the <code>who</code> command:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ who
+sjengle  pts/0        Sep 15 13:33 (stargate.cs.usfca.edu)
+test     pts/1        Sep 15 14:34 (stargate.cs.usfca.edu)
+</pre>
+
+<p>Another common problem is dealing with too much console output at once. The <code>more</code> and <code>less</code> commands are useful here. The <code>more</code> command will display one page of output and pause until you hit the spacebar, allowing you to easily page through input. The <code>less</code> command is similar, but it also allows you to scroll backwards. You can remember the difference between the two with the phrase "<a href="http://en.wikipedia.org/wiki/Less_is_more">less is more</a>" (indicating the <code>less</code> command is more powerful than the <code>more</code> command.</p>
+
+<p>However, these commands both need to know what output it should page through. You must send output to these commands using the <code>|</code> <b>pipe</b> symbol. Think of the pipe as a "send to" function, where it the output of one command is sent to another via a pipe. For example, the command <code>ls -lR /home/web/sjengle | more</code> sends the output from <code>ls -lR /home/web/sjengle</code> to the <code>more</code> command. You'll see something similar to this:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-ls-more.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-ls-more.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>Finally, the <code>diff</code> command will show you the <u>diff</u>erence between two files. For example, suppose we had <code>text1.txt</code> and <code>test2.txt</code> with the following content:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ cat test1.txt
+ant
+bat
+cat
+dog
+elk
+
+[sjengle@hrn23501 ~]$ cat test2.txt
+ape
+bee
+cow
+dog
+elk
+fly
+</pre>
+
+<p>If we want to see the difference between these two files, we can enter <code>diff test1.txt test2.txt</code> at the prompt:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ diff test1.txt test2.txt
+1,3c1,3
+< ant
+< bat
+< cat
+---
+> ape
+> bee
+> cow
+5a6
+> fly
+</pre>
+
+<p>The <code>diff</code> program will show which lines do not match. The &lt; at the start of the line means the text came from the left file (in this case <code>text1.txt</code>) and the <code>&gt;</code> at the start of the line means the text came from the right file (in this case <code>text2.txt</code>). The text <code>1,3c1,3</code> indicates lines 1 through 3 in both files have been changed (<code>c</code>). The <code>5a6</code> indicates that line 6 has been added (<code>a</code>) in <code>file2.txt</code>. This notation can be difficult to read, so you can compare files side-by-side instead:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ diff -y -W 20 test1.txt test2.txt
+ant   |    ape
+bat   |    bee
+cat   |    cow
+dog        dog
+elk        elk
+      >    fly
+</pre>
+
+<p>In the above output, the <code>-y</code> flag indicates that the files should be shown side-by-side. The <code>-W 20</code> flag indicates the total column width for the output should be 20 characters. The | symbol between files indicates those lines have been changed, and the <code>&gt;</code> symbol indicates there is an added line on the right side.</p>
+
+<h2>Text Editors</h2>
+
+<p>If you are logged in to a lab computer remotely, you cannot run a GUI text editor. I recommend getting familiar with some of the text editors that work from the console. There are many options, including <code>nano</code>, <code>emacs</code>, and <code>vim</code>. Of the three, <code>nano</code> is the easiest to learn and use. However, most "old school" programmers use either <code>emacs</code> or <code>vim</code> because they are more powerful, and make the task of programming easier once you learn your way around them. I personally use <code>vim</code> when logged in remotely.</p>
+
+<p>I will demonstrate using <code>nano</code> here. If you want to learn <code>emacs</code> or <code>vim</code>, I suggest looking at one of the <a href="https://www.google.com/search?q=getting%20started%20with%20emacs">many resources</a> <a href="https://www.google.com/search?q=emacs%20versus%20vim">available</a> <a href="https://www.google.com/search?q=getting%20started%20with%20vim">on the web</a>.</p>
+
+<p>Start by entering <code>nano hello.txt</code> at the prompt. This will open up <code>nano</code> and let you start editing a file named <code>hello.txt</code> in your current directory. You'll see a screen similar to:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-nano1.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-nano1.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>You can immediately start typing text. (In the image above, we have already started adding some basic text.) At the top middle of your screen you will see the filename <code>hello.txt</code> and at the bottom of the screen you will see several commands. The <code>^</code> indicates you should press the <code>Control</code> key plus the letter specified.</p>
+
+<p>For example, to save our file, press <code>Control</code> and <code>O</code> (that is the letter <code>O</code>, and not the number <code>0</code>) at the same time to execute the <code>WriteOut</code> command. You will be prompted for the filename in case you want to change it:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-nano2.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-nano2.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>Press enter. You'll see how many lines <code>nano</code> wrote to the file near the bottom middle of the screen:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-nano3.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-nano3.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>To exit, press <code>Control</code> and <code>X</code> at the same time. This will take you back to the prompt. You can verify the contents of your file with the <code>cat</code> command:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="{{ sites.url}}/assets/linux-nano4.png" class="thumbnail">
+            <img src="{{ sites.url}}/assets/linux-nano4.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+<p>If you plan to do a lot of text editing remotely, I suggest you spend the time getting familiar with <code>emacs</code> or <code>vim</code>. Otherwise, you can transfer your files over to the lab computers (see other <a href="/resources">resources</a>), and work on the files primarily on your home computer.</p>
+
+<h2>Other Resources</h2>
+
+<p>There are several Linux tutorials available on the web. Here are a few you may find useful:</p>
+
+<ul>
+    <li><p><a href="http://www.cs.usfca.edu/~parrt/course/601/lectures/unix.util.html">How To Look Like A UNIX Guru</a> by <a href="http://www.cs.usfca.edu/~parrt/">Terence Parr</a></p></li>
+
+    <li><p><a href="http://heather.cs.ucdavis.edu/~matloff/unix.html">Unix and Linux Tutorial Center</a> by <a href="http://heather.cs.ucdavis.edu/wel.html">Norman Matloff</a></p></li>
+
+    <li><p><a href="http://cs.usfca.edu/support/linux-tutorial.html">Linux Tutorial</a> by <a href="http://cs.usfca.edu/support.html">CS Support</a></p></li>
+</ul>
+
+<p>The best way to learn is by doing! It may be difficult to remember everything at first, but using the command-line is faster (and better for your wrists) than clicking everywhere with a mouse.</p>
