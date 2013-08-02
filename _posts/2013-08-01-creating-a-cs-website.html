@@ -1,0 +1,94 @@
+---
+layout: post
+title:  'Creating a CS Website'
+author: 'Sophie Engle'
+date:   2013-08-01
+lead: 'You have the option of creating a website tied to your CS account. You have to write your own web code, but basic HTML and CSS should be easy for a computer science major to pick up. It is an excellent way to advertise your web programming skills and create a professional web presence.'
+---
+
+<h2>Adding Files</h2>
+
+<p>Every CS account has an associated web directory. This is located at (replace <code>test</code> with your CS username):</p>
+
+<pre>
+/home/web/test
+</pre>
+
+<p>For example, my web directory is <code>/home/web/sjengle</code> since <code>sjengle</code> is my CS username. You can enter this directory by running the following command when logged into one of the lab computers (again, replace test with your username):</p>
+
+<pre>
+cd /home/web/test
+</pre>
+
+<p>Any HTML files you place here will show up on your website. You can create a quick <code>index.html</code> file by entering the following at the command line (NOT including the <code>$</code> prompt character):</p>
+
+<pre>
+$ cat &gt; index.html
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome!&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;Hello world!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>When done typing, type <code>CTRL + D</code>. Alternatively, you can create an <code>index.html</code> file in any text editor, or transfer HTML files from your local computer to your web directory.</p>
+
+<h2>Setting Permissions</h2>
+
+<p>You need to make sure you set the file and directory permissions of all files in your web directory so that anyone may view (but not modify) those files. Otherwise, nobody will actually be able to see the webpages you have created. The easiest way to do this is to execute the following command from your web directory (NOT your home directory!):</p>
+
+<pre>
+chmod -R go=rX *
+</pre>
+
+<p>You can verify that the above setting worked by running <code>ls -l</code> from the command line. You should see <code>r--</code> permissions for all files, and <code>r-x</code> permissions for all directories. For example:</p>
+
+<pre>
+-rw-r--r-- 1 sjengle faculty 3.8K Jan 26  2012 contact.html
+drwxr-xr-x 4 sjengle faculty 8.0K Jan  7  2011 courses
+drwxr-xr-x 2 sjengle faculty 8.0K Oct 31  2011 css
+drwxr-xr-x 2 sjengle faculty 1.0K Aug 18  2010 images
+-rw-r--r-- 1 sjengle faculty 3.7K Jul 14 11:43 index.html
+-rw-r--r-- 1 sjengle faculty 1.9K Jan 11  2012 research.html
+-rw-r--r-- 1 sjengle faculty 3.2K Jan 11  2012 teaching.html
+-rw-r--r-- 1 sjengle faculty  21K Apr 20 02:23 vitae.html
+</pre>
+
+<p>Using the settings above, if you do not have an <code>index.html</code> (or similar) file in each subdirectory, the web server will automatically generate a page showing all the files in that directory. If you do not want this behavior, you need to remove read (<code>r</code>) access from all the directories. Run <code>man chmod</code> to learn more about how the <code>chmod</code> command works.</p>
+
+<h2>Viewing Website</h2>
+
+<p>If you placed your <code>html</code> files in the correct location and have properly set the file permissions, you should be able to view your CS website at the following link (replace <code>test</code> with your CS username):</p>
+
+<pre>
+http://www.cs.usfca.edu/~test/
+</pre>
+
+<p>If not, double check you followed the steps above. (The <code>~</code> character is called a tilde or swung dash.)</p>
+
+<h2>Additional Resources</h2>
+
+<p>There are several resources on the web on writing webpages, HTML, and CSS. My personal favorites are:</p>
+
+<ul>
+    <li><p><a href="http://htmlhelp.com/">HTML Help (http://htmlhelp.com/)</a><br>
+    <em>Provides a clean and easy to access HTML and CSS reference.</em></p></li>
+
+    <li><p><a href="http://validator.w3.org/">W3C Markup Validator (http://validator.w3.org/)</a><br>
+    <em>Validates your HTML, CSS, and more.</em></p></li>
+
+    <li><p><a href="http://www.w3schools.com/">W3 Schools (http://www.w3schools.com/)</a><br>
+    <em>Provides interactive tutorials for HTML, CSS, and more.</em></p></li>
+
+    <li><p><a href="http://webtypography.net/">Elements of Typographic Style (http://webtypography.net/)</a><br>
+    <em>A practical guide to web typography.</em></p></li>
+
+    <li><p><a href="http://webstyleguide.com/">Web Style Guide (http://webstyleguide.com/)</a><br>
+    <em>Basic web design principles.</em></p></li>
+</ul>
+
+<p>You can also check out the <a href="http://web.cs.usfca.edu/basics">CS Resources</a> page, which has a little more information about the web.</p>
