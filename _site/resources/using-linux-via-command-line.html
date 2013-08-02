@@ -93,6 +93,7 @@
 
 <p>Before we enter any commands, you should understand a little more about the console output. Look at the window below:</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/linux-console.png" class="thumbnail">
@@ -124,6 +125,7 @@ Sat Sep 15 13:40:29 PDT 2012
 
 <p>Are there any other ways we can use this program? To find out, enter <code>man date</code> at the prompt. You'll see output that looks like this:</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/linux-man-date1.png" class="thumbnail">
@@ -136,6 +138,7 @@ Sat Sep 15 13:40:29 PDT 2012
 <p>All <code>man</code> pages have a similar format. It starts with a description, gives a usage summary, goes into some details, shows an example, and suggests other similar programs to look at. You can either scroll through the <code>man</code> page with the up and down arrows, or press the spacebar to advance by a page at a time.</p>
 
 <p>Go ahead and scroll down a bit, until you see the <code>-u</code> text:</p>
+
 
 <ul class="thumbnails">
     <li class="span6">
@@ -156,6 +159,7 @@ Sat Sep 15 20:40:57 UTC 2012
 </pre>
 
 <p>The following shows the console output after running all of the above commands:</p>
+
 
 <ul class="thumbnails">
     <li class="span6">
@@ -221,6 +225,7 @@ cs221                       google_app_engine
 
 <p>Above, you can see directories and files that were hidden before. There are several other flags you can pass to <code>ls</code> as well. For example, you can see the result of the <code>--color</code> flag in the screenshot below:</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/linux-ls-color.png" class="thumbnail">
@@ -276,6 +281,7 @@ cs110  cs212  cs326  public  web
 
 <p>There are several commands for displaying and manipulating text files. For example, you can use the <code>cat</code> command (con<u>cat</u>enate and print) if you just need to see what is in a small text file. Consider the following example:</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/linux-cat-hello-goodbye.png" class="thumbnail">
@@ -288,6 +294,7 @@ cs110  cs212  cs326  public  web
 <p class="muted"><i>(For the above example to work, you need to already have files <code>hello.txt</code> and <code>goodbye.txt</code> in your directory.)</i></p>
 
 <p>You can also use <code>cp</code> to make a <u>c</u>o<u>p</u>y of a file, <code>mv</code> to <u>m</u>o<u>v</u>e a file to a new location, and <code>rm</code> to <u>r</u>e<u>m</u>ove a file entirely. For example:</p>
+
 
 <ul class="thumbnails">
     <li class="span6">
@@ -338,6 +345,7 @@ books.jpg       goldengate.jpg  olivetrees.jpg  sophie.jpg
 <p>The <code>*</code> symbol is very convenient, but also <strong>dangerous</strong>. <strong class="text-error">Entering <code>rm -rf *</code> will delete all of your files irrecoverably (do <i>not</i> test this)</strong>. Be careful where and how you use wildcards!</p>
 
 <p>The entire wildcard example is below:</p>
+
 
 <ul class="thumbnails">
     <li class="span6">
@@ -472,6 +480,7 @@ test     pts/1        Sep 15 14:34 (stargate.cs.usfca.edu)
 
 <p>However, these commands both need to know what output it should page through. You must send output to these commands using the <code>|</code> <b>pipe</b> symbol. Think of the pipe as a "send to" function, where it the output of one command is sent to another via a pipe. For example, the command <code>ls -lR /home/web/sjengle | more</code> sends the output from <code>ls -lR /home/web/sjengle</code> to the <code>more</code> command. You'll see something similar to this:</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/linux-ls-more.png" class="thumbnail">
@@ -538,6 +547,7 @@ elk        elk
 
 <p>Start by entering <code>nano hello.txt</code> at the prompt. This will open up <code>nano</code> and let you start editing a file named <code>hello.txt</code> in your current directory. You'll see a screen similar to:</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/linux-nano1.png" class="thumbnail">
@@ -551,6 +561,7 @@ elk        elk
 
 <p>For example, to save our file, press <code>Control</code> and <code>O</code> (that is the letter <code>O</code>, and not the number <code>0</code>) at the same time to execute the <code>WriteOut</code> command. You will be prompted for the filename in case you want to change it:</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/linux-nano2.png" class="thumbnail">
@@ -562,6 +573,7 @@ elk        elk
 
 <p>Press enter. You'll see how many lines <code>nano</code> wrote to the file near the bottom middle of the screen:</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/linux-nano3.png" class="thumbnail">
@@ -572,6 +584,7 @@ elk        elk
 
 
 <p>To exit, press <code>Control</code> and <code>X</code> at the same time. This will take you back to the prompt. You can verify the contents of your file with the <code>cat</code> command:</p>
+
 
 <ul class="thumbnails">
     <li class="span6">

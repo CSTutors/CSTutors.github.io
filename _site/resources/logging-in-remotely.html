@@ -109,6 +109,7 @@
 
 <p>If you are using Windows, you should first download and install <strong>PuTTY</strong> at <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">http://www.chiark.greenend.org.uk/~sgtatham/putty/</a>. Once installed, open up PuTTy. Enter <code>stargate.cs.usfca.edu</code> as the Host Name:</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/remote-putty-config.png" class="thumbnail">
@@ -119,6 +120,7 @@
 
 
 <p>Click the "Open" button. You may receive a warning (see below).</p>
+
 
 <ul class="thumbnails">
     <li class="span6">
@@ -131,6 +133,7 @@
 
 <p>Go ahead and click "Accept". When prompted, enter your username and password. <span class="text-error">You will not see the text you type when entering your password.</span> (This prevents someone from looking over your shoulder and seeing your password.)</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/remote-putty-password.png" class="thumbnail">
@@ -141,6 +144,7 @@
 
 
 <p>Once you have successfully logged in, you will see a welcome message similar to the following:</p>
+
 
 <ul class="thumbnails">
     <li class="span6">
@@ -163,6 +167,7 @@ ssh test@stargate.cs.usfca.edu
 
 <p>For example, my username is <code>sjengle</code> so my Terminal window looks as follows:</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/remote-mac-ssh.png" class="thumbnail">
@@ -175,6 +180,7 @@ ssh test@stargate.cs.usfca.edu
 <p>When prompted, enter your username and password. <span class="text-error">You will not see the text you type when entering your password.</span> (This prevents someone from looking over your shoulder and seeing your password.)</p>
 
 <p>Once you have successfully logged in, you will see a welcome message similar to the following:</p>
+
 
 <ul class="thumbnails">
     <li class="span6">
@@ -195,6 +201,7 @@ ssh test@stargate.cs.usfca.edu
 
 <p>Next, you need to choose which lab machine to SSH into next. You do not want to choose a machine that another student is already using, since it may be slow. To see which machines are up and have no remote users, run <code>rusers -a</code> as instructed in the welcome message. You will see something similar to this:</p>
 
+
 <ul class="thumbnails">
     <li class="span6">
         <a href="/assets/remote-mac-rusers.png" class="thumbnail">
@@ -207,6 +214,7 @@ ssh test@stargate.cs.usfca.edu
 <p>Computer names will always be <code>hrnAAABB</code> where <code>AAA</code> is the room (235 or 530) and <code>BB</code> is the machine number. In the image above, <code>hrn23501</code> and <code>hrn23502</code> have no users, and <code>hrn23503</code> does not show up indicating it is offline. There is one user test logged into <code>hrn23505</code> and two users <code>test</code> and <code>sjengle</code> are logged into <code>hrn53002</code>.</p>
 
 <p>Choose a machine with no remote users logged in and ssh into that machine. For example, we can run the command <code>ssh hrn23501</code> to ssh into that machine:</p>
+
 
 <ul class="thumbnails">
     <li class="span6">

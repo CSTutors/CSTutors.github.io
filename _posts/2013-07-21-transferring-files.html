@@ -20,7 +20,8 @@ svn export https://www.cs.usfca.edu/svn/username/filepath
 
 <p>For example, the following screenshot demonstrates how to export a copy of just the <code>project2.jar</code> file onto the lab computer:</p>
 
-{% include thumbnail.html image="transferring-svn.png" %}
+{% assign thumbnail="transferring-svn.png" %}
+{% include thumbnail.html %}
 
 <p>If you want to consistently keep your home computer and lab computers synchronized, you should checkout a working copy instead.</p>
 
@@ -44,7 +45,8 @@ scp -r username@stargate.cs.usfca.edu:remotedir localdir
 
 <p>The following screenshot demonstrates sending files using <code>scp</code> first from the local computer to the lab computer, and second from the lab computer to the local computer:</p>
 
-{% include thumbnail.html image="transferring-scp.png" %}
+{% assign thumbnail="transferring-scp.png" %}
+{% include thumbnail.html %}
 
 <p><em>Both of these transfers are done on the local computer!</em> Also, keep in mind that <code>scp</code> requires the destination directory to already exist. In the example above, the directory <code>~/cs212/</code> had to already exist on the lab computer for the command to work.</p>
 
@@ -54,10 +56,12 @@ scp -r username@stargate.cs.usfca.edu:remotedir localdir
 
 <p>First, there is usually somewhere to specify the protocol to use. It is important you select SFTP and not just FTP (which isn't secure). Enter your CS username and <code>stargate.cs.usfca.edu</code> as the host name. For example:</p>
 
-{% include thumbnail.html image="transferring-transmit-login.png" %}
+{% assign thumbnail="transferring-transmit-login.png" %}
+{% include thumbnail.html %}
 
 <p>Once you connect, you should see files on your lab computer. Most programs will let you drag-and-drop files between your home computer and the remote computer.</p>
 
-{% include thumbnail.html image="transferring-transmit-files.png" %}
+{% assign thumbnail="transferring-transmit-files.png" %}
+{% include thumbnail.html %}
 
 <p>There is also a free command-line SFTP client from the <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> group for Windows, but I recommend a GUI program instead.</p>

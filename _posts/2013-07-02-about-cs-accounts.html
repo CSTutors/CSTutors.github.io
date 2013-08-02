@@ -42,12 +42,14 @@ lead: 'This guide will explain the difference between your USF Connect account a
 
 <p>If you have an account setup, you should see something like this:<p>
 
-<p><img src="{{ sites.url}}/assets/about-test.png" class="img-polaroid"></p>
+{% assign thumbnail="about-test.png" %}
+{% include thumbnail.html %}
 
 <p>If you see the above image, then you have an account setup. If you are unable to login, double check that you are trying to login using the LAST six digits of your student ID.</p>
 
 <p>Your account is not setup yet if you see something like this instead:</p>
 
-<p><img src="{{ sites.url}}/assets/about-nowhere.png" class="img-polaroid"></p>
+{% assign thumbnail="about-nowhere.png" %}
+{% include thumbnail.html %}
 
 <p>If this is the case, please contact <a href="http://cs.usfca.edu/support.html">CS Support</a> at <a href="mailto:support@cs.usfca.edu">support@cs.usfca.edu</a> to have a CS account setup for you.</p>
