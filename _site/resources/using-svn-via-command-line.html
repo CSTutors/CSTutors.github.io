@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>CS Tutoring Center</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Beg: Bootstrap //-->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+<!-- End: Bootstrap //-->
+
+<!-- Beg: Custom Styles //-->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700">
+<link rel="stylesheet" href="/css/cstutors.css">
+<!-- End: Custom Styles //-->
+
+
+<!--
+    Konami Code:    https://github.com/snaptortoise/konami-js
+    Asteroids Game: http://www.websiteasteroids.com/
+//-->
+<script type="text/javascript" src="/js/konami.js"></script>
+
+<script type="text/javascript">
+    var konami = new Konami("javascript:var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='http://www.websiteasteroids.com/asteroids.min.js';void(0);");
+    konami.pattern = "38384040373937396665";
+</script>
+
+
+
+
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/cstutors.css">
+</head>
+
+<body>
+<!-- Beg: Navigation //-->
+<div class="navbar navbar-static-top navbar-inverse">
+    <div class="navbar-inner">
+
+        <!-- Shown When Collapsed //-->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        Navigation <i class="icon-chevron-down icon-white"></i>
+        </a>
+
+        <a class="brand" href="#">CS Tutoring Center</a>
+
+        <!-- Shown When Expanded //-->
+        <div class="nav-collapse collapse">
+
+            <ul class="nav pull-left">
+                <li ><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+
+                <li ><a href="/tutors/"><i class="icon-user icon-white"></i> Tutors</a></li>
+
+                <li ><a href="/calendar/"><i class="icon-calendar icon-white"></i> Calendar</a></li>
+
+                <li ><a href="/resources/"><i class="icon-book icon-white"></i> Resources</a></li>
+            </ul>
+
+            <ul class="nav pull-right">
+                <li ><a href="/about/"><i class="icon-info-sign icon-white"></i> About</a></li>
+
+                <li ><a href="/contact/"><i class="icon-envelope icon-white"></i> Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!-- End: Navigation //-->
+
+
+<!-- Beg: Page Container //-->
+<div class="container">
+<!-- Beg: Page Header //-->
+<h1 class="page-header">Using SVN via Command Line</h1>
+<p class="muted text-right" style="margin-top: -4ex;"><small><em>by Sophie Engle on Aug 2013</em></small></p>
+
+<p class="lead">You may occasionally need to use SVN via the command line (like, for example, when you test your code remotely on the lab computers). This guide goes through how to create a working copy and keep it updated with your SVN repository, or do a one-time export of your SVN repository for testing purposes.</p>
+<!-- End: Page Header //-->
+
+<!-- Beg: Page Body //-->
+<h2>Working Copy</h2>
+
+<p>The first step is to decide how much of your SVN repository to checkout and create a working copy for. You can checkout your entire repository or just a particular subfolder. For example, if I were checking out my entire repository, I would use:</p>
+
+<pre>
+https://www.cs.usfca.edu/svn/sjengle
+</pre>
+
+<p>Otherwise, if I wanted to just checkout a working copy of all my CS 212 code, I would use:</p>
+
+<pre>
+https://www.cs.usfca.edu/svn/sjengle/cs212
+</pre>
+
+<p>After you decide which part of the repository you want, use the <code>svn checkout</code> command (or <code>svn co</code> for short) to create a working copy of that repository on your local computer.</p>
+
+<pre>
+svn co https://www.cs.usfca.edu/svn/sjengle/cs212 cs212
+</pre>
+
+<p>The arguments are always the remote directory that you want to checkout first, followed by the local directory.</p>
+
+<h2>Temporary Copy</h2>
+
+<p>If you do not want to try and keep a working copy synchronized with your repository on the lab computers, you can export a temporary copy of your SVN repository for testing purposes. First, create a temporary directory for your files and change to that directory:</p>
+
+<pre>
+[sjengle@hrn23501 ~]$ mkdir temp
+[sjengle@hrn23501 ~]$ cd temp
+[sjengle@hrn23501 temp]$ pwd
+/home/sjengle/temp
+</pre>
+
+<p>Now, we will use the <code>svn export</code> command to export a temporary copy of your SVN repository. For example:</p>
+
+<pre>
+[sjengle@hrn23501 temp]$ svn export https://www.cs.usfca.edu/svn/sjengle/cs212/homework05
+A    homework05
+A    homework05/.classpath
+A    homework05/.project
+A    homework05/src
+A    homework05/src/PrimeFinder.java
+A    homework05/log4j.properties
+A    homework05/.settings
+A    homework05/.settings/org.eclipse.jdt.core.prefs
+Exported revision 387.
+[sjengle@hrn23501 temp]$ ls
+homework05
+</pre>
+
+<p>Just make sure you change the path you are exporting to the directory or file you want to retrieve from SVN.</p>
+
+<p>You can <code>cd</code> into the directory and test your code or make changes. Remember, though, this is NOT a working copy. Any changes you make to your code will not be reflected in SVN.</p>
+
+<p>When done, delete the temporary copy. For example:</p>
+
+<pre>
+[sjengle@hrn23501 homework05]$ cd ..
+[sjengle@hrn23501 temp]$ ls
+homework05
+[sjengle@hrn23501 temp]$ rm -rf homework05/
+[sjengle@hrn23501 temp]$ cd ..
+[sjengle@hrn23501 ~]$ rmdir temp
+</pre>
+
+<p>Just be careful when removing directories and files using the command-line. It is easy to irrecoverably delete all your files.</p>
+
+<!-- End: Page Body //-->
+
+
+<!-- Beg: Page Footer //-->
+<p class="footer clearfix"><a href="http://usfca.edu/">University of San Francisco</a> &bullet; <a href="http://www.cs.usfca.edu/">Department of Computer Science</a> &bullet; Built with <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>, <a href="http://jekyllrb.com/">Jekyll</a>, and <a href="http://pages.github.com/">GitHub Pages</a>
+</p>
+<!-- End: Page Footer //-->
+
+</div>
+<!-- End: Page Container //-->
+
+</body>
+</html>
+
