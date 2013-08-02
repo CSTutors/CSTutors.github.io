@@ -12,13 +12,7 @@ lead: 'The lab machines run both Windows and Linux, but most classes use primari
 
 <p>Before we enter any commands, you should understand a little more about the console output. Look at the window below:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-console.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-console.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-console.png" %}
 
 <p>The text in the square braces <code>[</code> and <code>]</code> gives you basic information such as your username, the name of the computer you are logged into, and your current directory or folder. In the output above, the user is <code>sjengle</code> and we start in the <code>~</code> directory on the <code>stargate</code> computer. After executing the <code>ssh</code> command, we change to the <code>hrn23501</code> lab computer.</p>
 
@@ -42,25 +36,13 @@ Sat Sep 15 13:40:29 PDT 2012
 
 <p>Are there any other ways we can use this program? To find out, enter <code>man date</code> at the prompt. You'll see output that looks like this:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-man-date1.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-man-date1.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-man-date1.png" %}
 
 <p>All <code>man</code> pages have a similar format. It starts with a description, gives a usage summary, goes into some details, shows an example, and suggests other similar programs to look at. You can either scroll through the <code>man</code> page with the up and down arrows, or press the spacebar to advance by a page at a time.</p>
 
 <p>Go ahead and scroll down a bit, until you see the <code>-u</code> text:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-man-date2.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-man-date2.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-man-date2.png" %}
 
 <p>This is a flag (also called a command-line argument or parameter) that we can pass to the <code>date</code> program to change how it outputs the date. The <code>man</code> pages will always provide a list of flags you can pass to a program to change its behavior.</p>
 
@@ -73,13 +55,7 @@ Sat Sep 15 20:40:57 UTC 2012
 
 <p>The following shows the console output after running all of the above commands:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-console-man-date.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-console-man-date.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-console-man-date.png" %}
 
 <p>Even seasoned Linux users occasionally forget the flags you can specify to a program, and rely on <code>man</code> pages to look it up.</p>
 
@@ -136,13 +112,7 @@ cs221                       google_app_engine
 
 <p>Above, you can see directories and files that were hidden before. There are several other flags you can pass to <code>ls</code> as well. For example, you can see the result of the <code>--color</code> flag in the screenshot below:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-ls-color.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-ls-color.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-ls-color.png" %}
 
 <p>We can change our current directory using the <code>cd</code> (or <u>c</u>hange <u>d</u>irectory) program. For example, enter <code>cd /home/public</code> at the prompt and notice how the text in the square brackets <code>[ ]</code> changes:</p>
 
@@ -190,25 +160,13 @@ cs110  cs212  cs326  public  web
 
 <p>There are several commands for displaying and manipulating text files. For example, you can use the <code>cat</code> command (con<u>cat</u>enate and print) if you just need to see what is in a small text file. Consider the following example:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-cat-hello-goodbye.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-cat-hello-goodbye.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-cat-hello-goodbye.png" %}
 
 <p class="muted"><i>(For the above example to work, you need to already have files <code>hello.txt</code> and <code>goodbye.txt</code> in your directory.)</i></p>
 
 <p>You can also use <code>cp</code> to make a <u>c</u>o<u>p</u>y of a file, <code>mv</code> to <u>m</u>o<u>v</u>e a file to a new location, and <code>rm</code> to <u>r</u>e<u>m</u>ove a file entirely. For example:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-ls-cp-mv-rm.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-ls-cp-mv-rm.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-ls-cp-mv-rm.png" %}
 
 <p>It can be slow and tedious to remove one file at a time. Next, we discuss how to use the wildcard symbol to speed up the process.</p>
 
@@ -251,13 +209,7 @@ books.jpg       goldengate.jpg  olivetrees.jpg  sophie.jpg
 
 <p>The entire wildcard example is below:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-wildcards.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-wildcards.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-wildcards.png" %}
 
 <p>You can try out this example yourself&mdash;my <code>web</code> directory is readable by all users. To explain precisely what this means, we need to discuss file permissions next.</p>
 
@@ -383,13 +335,7 @@ test     pts/1        Sep 15 14:34 (stargate.cs.usfca.edu)
 
 <p>However, these commands both need to know what output it should page through. You must send output to these commands using the <code>|</code> <b>pipe</b> symbol. Think of the pipe as a "send to" function, where it the output of one command is sent to another via a pipe. For example, the command <code>ls -lR /home/web/sjengle | more</code> sends the output from <code>ls -lR /home/web/sjengle</code> to the <code>more</code> command. You'll see something similar to this:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-ls-more.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-ls-more.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-ls-more.png" %}
 
 <p>Finally, the <code>diff</code> command will show you the <u>diff</u>erence between two files. For example, suppose we had <code>text1.txt</code> and <code>test2.txt</code> with the following content:</p>
 
@@ -448,45 +394,21 @@ elk        elk
 
 <p>Start by entering <code>nano hello.txt</code> at the prompt. This will open up <code>nano</code> and let you start editing a file named <code>hello.txt</code> in your current directory. You'll see a screen similar to:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-nano1.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-nano1.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-nano1.png" %}
 
 <p>You can immediately start typing text. (In the image above, we have already started adding some basic text.) At the top middle of your screen you will see the filename <code>hello.txt</code> and at the bottom of the screen you will see several commands. The <code>^</code> indicates you should press the <code>Control</code> key plus the letter specified.</p>
 
 <p>For example, to save our file, press <code>Control</code> and <code>O</code> (that is the letter <code>O</code>, and not the number <code>0</code>) at the same time to execute the <code>WriteOut</code> command. You will be prompted for the filename in case you want to change it:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-nano2.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-nano2.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-nano2.png" %}
 
 <p>Press enter. You'll see how many lines <code>nano</code> wrote to the file near the bottom middle of the screen:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-nano3.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-nano3.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-nano3.png" %}
 
 <p>To exit, press <code>Control</code> and <code>X</code> at the same time. This will take you back to the prompt. You can verify the contents of your file with the <code>cat</code> command:</p>
 
-<ul class="thumbnails">
-    <li class="span5">
-        <a href="{{ sites.url}}/assets/linux-nano4.png" class="thumbnail">
-            <img src="{{ sites.url}}/assets/linux-nano4.png" width="100%">
-        </a>
-    </li>
-</ul>
+{% include thumbnail.html image="linux-nano4.png" %}
 
 <p>If you plan to do a lot of text editing remotely, I suggest you spend the time getting familiar with <code>emacs</code> or <code>vim</code>. Otherwise, you can transfer your files over to the lab computers (see other <a href="/resources">resources</a>), and work on the files primarily on your home computer.</p>
 

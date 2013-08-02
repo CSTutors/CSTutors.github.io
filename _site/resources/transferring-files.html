@@ -102,12 +102,13 @@ svn export https://www.cs.usfca.edu/svn/username/filepath
 <p>For example, the following screenshot demonstrates how to export a copy of just the <code>project2.jar</code> file onto the lab computer:</p>
 
 <ul class="thumbnails">
-    <li class="span5">
+    <li class="span6">
         <a href="/assets/transferring-svn.png" class="thumbnail">
             <img src="/assets/transferring-svn.png" width="100%">
         </a>
     </li>
 </ul>
+
 
 <p>If you want to consistently keep your home computer and lab computers synchronized, you should checkout a working copy instead.</p>
 
@@ -132,12 +133,13 @@ scp -r username@stargate.cs.usfca.edu:remotedir localdir
 <p>The following screenshot demonstrates sending files using <code>scp</code> first from the local computer to the lab computer, and second from the lab computer to the local computer:</p>
 
 <ul class="thumbnails">
-    <li class="span5">
+    <li class="span6">
         <a href="/assets/transferring-scp.png" class="thumbnail">
             <img src="/assets/transferring-scp.png" width="100%">
         </a>
     </li>
 </ul>
+
 
 <p><em>Both of these transfers are done on the local computer!</em> Also, keep in mind that <code>scp</code> requires the destination directory to already exist. In the example above, the directory <code>~/cs212/</code> had to already exist on the lab computer for the command to work.</p>
 
@@ -148,22 +150,24 @@ scp -r username@stargate.cs.usfca.edu:remotedir localdir
 <p>First, there is usually somewhere to specify the protocol to use. It is important you select SFTP and not just FTP (which isn't secure). Enter your CS username and <code>stargate.cs.usfca.edu</code> as the host name. For example:</p>
 
 <ul class="thumbnails">
-    <li class="span5">
+    <li class="span6">
         <a href="/assets/transferring-transmit-login.png" class="thumbnail">
             <img src="/assets/transferring-transmit-login.png" width="100%">
         </a>
     </li>
 </ul>
 
+
 <p>Once you connect, you should see files on your lab computer. Most programs will let you drag-and-drop files between your home computer and the remote computer.</p>
 
 <ul class="thumbnails">
-    <li class="span5">
+    <li class="span6">
         <a href="/assets/transferring-transmit-files.png" class="thumbnail">
             <img src="/assets/transferring-transmit-files.png" width="100%">
         </a>
     </li>
 </ul>
+
 
 <p>There is also a free command-line SFTP client from the <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> group for Windows, but I recommend a GUI program instead.</p>
 
