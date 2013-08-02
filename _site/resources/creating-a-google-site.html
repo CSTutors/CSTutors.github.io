@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>CS Tutoring Center</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Beg: Bootstrap //-->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+<!-- End: Bootstrap //-->
+
+<!-- Beg: Custom Styles //-->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700">
+<link rel="stylesheet" href="/css/cstutors.css">
+<!-- End: Custom Styles //-->
+
+
+<!--
+    Konami Code:    https://github.com/snaptortoise/konami-js
+    Asteroids Game: http://www.websiteasteroids.com/
+//-->
+<script type="text/javascript" src="/js/konami.js"></script>
+
+<script type="text/javascript">
+    var konami = new Konami("javascript:var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='http://www.websiteasteroids.com/asteroids.min.js';void(0);");
+    konami.pattern = "38384040373937396665";
+</script>
+
+
+
+
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/cstutors.css">
+</head>
+
+<body>
+<!-- Beg: Navigation //-->
+<div class="navbar navbar-static-top navbar-inverse">
+    <div class="navbar-inner">
+
+        <!-- Shown When Collapsed //-->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        Navigation <i class="icon-chevron-down icon-white"></i>
+        </a>
+
+        <a class="brand" href="#">CS Tutoring Center</a>
+
+        <!-- Shown When Expanded //-->
+        <div class="nav-collapse collapse">
+
+            <ul class="nav pull-left">
+                <li ><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+
+                <li ><a href="/tutors/"><i class="icon-user icon-white"></i> Tutors</a></li>
+
+                <li ><a href="/calendar/"><i class="icon-calendar icon-white"></i> Calendar</a></li>
+
+                <li ><a href="/resources/"><i class="icon-book icon-white"></i> Resources</a></li>
+            </ul>
+
+            <ul class="nav pull-right">
+                <li ><a href="/about/"><i class="icon-info-sign icon-white"></i> About</a></li>
+
+                <li ><a href="/contact/"><i class="icon-envelope icon-white"></i> Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!-- End: Navigation //-->
+
+
+<!-- Beg: Page Container //-->
+<div class="container">
+<!-- Beg: Page Header //-->
+<h1 class="page-header">Creating a Google Site</h1>
+<p class="muted text-right" style="margin-top: -4ex;"><small><em>by Sophie Engle on Aug 2013</em></small></p>
+
+<p class="lead">You can use Dons Apps (a version of Google Apps) to create a Google Site. Google Sites include a WYSIWYG (What You See Is What You Get) webpage editor, so you do not need to write your own code. Go to <a href="http://support.google.com/sites/?hl=en">http://support.google.com/sites/?hl=en</a> to learn more about Google Sites. Go to <a href="http://cs.usfca.edu/support/google-sites.html">http://cs.usfca.edu/support/google-sites.html</a> for an alternate guide. </p>
+<!-- End: Page Header //-->
+
+<!-- Beg: Page Body //-->
+<h2>Creating a New Site</h2>
+
+<p>You will create this site using Dons Apps. First, you need to log in to USF Connect at <a href="https://connect.usfca.edu/">https://connect.usfca.edu/</a> using your USF Connect username and password (not your CS account):</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-login.png" class="thumbnail">
+            <img src="/assets/google-site-login.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>Once you have logged in, click the email icon near the top left of the page:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-connect-icons.png" class="thumbnail">
+            <img src="/assets/google-site-connect-icons.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>This will open up Dons Apps. You can switch from Gmail to Google Sites by clicking the "Sites" link at the top of the page. You can create your first Google Site by clicking the "Create" button on the left:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-create-site.png" class="thumbnail">
+            <img src="/assets/google-site-create-site.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>Next, you need to give your website a name. I suggest you use your full name as the website name, and your username as the site location:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-create-config.png" class="thumbnail">
+            <img src="/assets/google-site-create-config.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>If you enter your username for the site location, you will end up with a URL similar to (replacing <code>username</code> with your own username):</p>
+
+<pre>
+https://sites.google.com/a/usfca.edu/username
+</pre>
+
+<p>Click the "Create" button at the top when you are done entering the name. We will update the rest of the settings, like the theme, later. You should end up seeing a site similar to the following:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-empty-site.png" class="thumbnail">
+            <img src="/assets/google-site-empty-site.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>At this point, you have a Google Site! Unfortunately, nobody can see it yet. We will customize the visibility and theme settings of your Google Site next.</p>
+
+<h2>Customizing Visibility</h2>
+
+<p>We should make sure everyone can see your Google Site. Click on the blue "Share" button in the top-right corner. Once there click the "Change..." link in the "Who has access" section:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-share-link.png" class="thumbnail">
+            <img src="/assets/google-site-share-link.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>On the next screen, select "Public on the web" and click the "Save" button.</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-visibility-setting.png" class="thumbnail">
+            <img src="/assets/google-site-visibility-setting.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>After this point, everyone will be able to view your Google Site. Click the "Return to site" link at the very bottom of the page (in the footer) to return to your home page.</p>
+
+<h2>Customizing Theme</h2>
+
+<p>You may also want to customize the theme of your website. You will need to be in the "Manage Site" page for this part. From your home page, click the "More" button at the top-right corner of the page and select "Manage site" from the menu:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-manage-menu.png" class="thumbnail">
+            <img src="/assets/google-site-manage-menu.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>From the "Manage Site" page, scroll the left navigation pane down to the bottom. Click on the "Themes" link at the bottom. From here, you can select any theme you want:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-select-theme.png" class="thumbnail">
+            <img src="/assets/google-site-select-theme.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>You can preview each theme by clicking the magnifying glass icon. Once you have your theme selected, click the "Save" button at the top of the page. To see your site with the new theme, click the "Return to site" link at the bottom of the page (in the footer). Here is an example using the "Notebook" theme:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-sample-theme.png" class="thumbnail">
+            <img src="/assets/google-site-sample-theme.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>The following screenshots use the "Notebook" theme, but you can choose any one you want.</p>
+
+<h2>Adding Content</h2>
+
+<p>You can edit any page, including your home page, by clicking the pencil icon near the top of the page:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-edit-icon.png" class="thumbnail">
+            <img src="/assets/google-site-edit-icon.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>This will open an editor where you can type text. You can modify the appearance of this text by clicking different buttons on the tool bar:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-edit-text.png" class="thumbnail">
+            <img src="/assets/google-site-edit-text.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>You can also insert media, like images, links, gadgets, and Google documents from the "Insert" menu:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-insert-image.png" class="thumbnail">
+            <img src="/assets/google-site-insert-image.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>Click the "Save" button when you are done.</p>
+
+<h2>Adding Pages</h2>
+
+<p>You will likely want to add new pages to your site. Next to the edit button is a pencil icon, that will let you create a new page. From here, you can enter the page name, change the page template, and decide where to put the page:</p>
+
+<ul class="thumbnails">
+    <li class="span5">
+        <a href="/assets/google-site-create-page.png" class="thumbnail">
+            <img src="/assets/google-site-create-page.png" width="100%">
+        </a>
+    </li>
+</ul>
+
+
+<p>Depending on your theme, the new page should automatically show up on the navigation bar for your website.</p>
+
+<!-- End: Page Body //-->
+
+
+<!-- Beg: Page Footer //-->
+<p class="footer clearfix"><a href="http://usfca.edu/">University of San Francisco</a> &bullet; <a href="http://www.cs.usfca.edu/">Department of Computer Science</a> &bullet; Built with <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>, <a href="http://jekyllrb.com/">Jekyll</a>, and <a href="http://pages.github.com/">GitHub Pages</a>
+</p>
+<!-- End: Page Footer //-->
+
+</div>
+<!-- End: Page Container //-->
+
+</body>
+</html>
+
