@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>CS Tutoring Center</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Beg: Bootstrap //-->
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+<!-- End: Bootstrap //-->
+
+<!-- Beg: Custom Styles //-->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700">
+<link rel="stylesheet" href="/css/cstutors.css">
+<!-- End: Custom Styles //-->
+
+
+<!--
+    Konami Code:    https://github.com/snaptortoise/konami-js
+    Asteroids Game: http://www.websiteasteroids.com/
+//-->
+<script type="text/javascript" src="/js/konami.js"></script>
+
+<script type="text/javascript">
+    var konami = new Konami("javascript:var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='http://www.websiteasteroids.com/asteroids.min.js';void(0);");
+    konami.pattern = "38384040373937396665";
+</script>
+
+
+
+
+<link rel="stylesheet" href="/css/syntax.css">
+<link rel="stylesheet" href="/css/cstutors.css">
+</head>
+
+<body>
+<!-- Beg: Navigation //-->
+<div class="navbar navbar-static-top navbar-inverse">
+    <div class="navbar-inner">
+
+        <!-- Shown When Collapsed //-->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        Navigation <i class="icon-chevron-down icon-white"></i>
+        </a>
+
+        <a class="brand" href="#">CS Tutoring Center</a>
+
+        <!-- Shown When Expanded //-->
+        <div class="nav-collapse collapse">
+
+            <ul class="nav pull-left">
+                <li ><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+
+                <li ><a href="/tutors/"><i class="icon-user icon-white"></i> Tutors</a></li>
+
+                <li ><a href="/calendar/"><i class="icon-calendar icon-white"></i> Calendar</a></li>
+
+                <li ><a href="/resources/"><i class="icon-book icon-white"></i> Resources</a></li>
+            </ul>
+
+            <ul class="nav pull-right">
+                <li ><a href="/about/"><i class="icon-info-sign icon-white"></i> About</a></li>
+
+                <li ><a href="/contact/"><i class="icon-envelope icon-white"></i> Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!-- End: Navigation //-->
+
+
+<!-- Beg: Page Container //-->
+<div class="container">
+<!-- Beg: Page Header //-->
+<h1 class="page-header">Using Java via Command Line</h1>
+<p class="muted text-right" style="margin-top: -4ex;"><small><em>by Sophie Engle on Aug 2013</em></small></p>
+
+<p class="lead">For some classes, you will need to test your Java code on the lab computers. You can log in remotely, and then run your Java code via the command-line. You can find some basic information about the <code>java</code> command-line tool in the JDK documentation.</p>
+<!-- End: Page Header //-->
+
+<!-- Beg: Page Body //-->
+<h2>Basics</h2>
+
+<h3>Step 1: Compile</h3>
+
+<p>Make sure you are currently in the directory with your source code files. Remember, Java source code is always stored a <code>*.java</code> file. You first need to compile these files using Java. To do this, run the following command:</p>
+
+<pre>
+javac *.java
+</pre>
+
+<p>Now, when you <code>ls</code> your directory, you should notice you also have <code>*.class</code> files. Those are the files necessary to execute your Java code.</p>
+
+<h3>Step 2: Execute</h3>
+
+<p>To run your code, you need to know which class has the main() method. To execute your code, run the following command:</p>
+
+<pre>
+java -cp "." ClassName
+</pre>
+
+<p>Replace <code>ClassName</code> with the classname (no file extension) that contains your <code>main()</code> method. The <code>-cp "."</code> part tells the <code>java</code> tool to look for your <code>*.class</code> files in the current directory.</p>
+
+<h2>Arguments</h2>
+
+<p>If you want to provide command-line arguments to your program, just include those arguments after the class name:</p>
+
+<pre>
+java -cp "." ClassName arg1 arg2 arg3 ...
+</pre>
+
+<p>Replace <code>arg1 arg2 arg3 ...</code> with your command-line arguments (separated by spaces). For example, suppose the class <code>Driver</code> takes a filename as an argument. To execute your code with the argument, run the following command:</p>
+
+<pre>
+java -cp "." Driver hello.txt
+</pre>
+
+<p>If you must specify a file name with a space inside it, use quotes around the filename:</p>
+
+<pre>
+java -cp "." Driver "Hello World.txt"
+</pre>
+
+<h2>Jar Files</h2>
+
+<p>If you have already packaged your <code>*.class</code> files in a <code>*.jar</code> file, you can skip compiling your code with <code>javac</code>. To execute your code, run the following command:</p>
+
+<pre>
+java -cp filename.jar ClassName arguments
+</pre>
+
+<p>Replace <code>filename.jar</code> with the name of your jar file (assuming it is in the current directory). For this to work, your <code>*.jar</code> file must contain ALL of the necessary classes for your program to run.</p>
+
+<h2>Class Path</h2>
+
+<p>You can set your <code>$CLASSPATH</code> variable on the lab computers so you no longer have to specify the <code>-cp</code> argument. This becomes especially important when you start using third-party libraries and must include multiple jar files. To do this, change to your home directory (run <code>cd ~</code> at the prompt) and open the <code>.bash_profile</code> file. If it does not exist yet, go ahead and create it. Add the following line to the file:</p>
+
+<pre>
+export CLASSPATH=".:.*"
+</pre>
+
+<p>Some classes also provide some third-party libraries for you on the lab computers. For example, the CS 212 course places third-party libraries at <code>/home/public/cs212/libraries/</code> on the lab computers. You can also add that directory (or any other) to your <code>$CLASSPATH</code> variable by adding the additional line:</p>
+
+<pre>
+export CLASSPATH="$CLASSPATH:/home/public/cs212/libraries/*"
+</pre>
+
+<p>Save the file and exit. Then, run the following command:</p>
+
+<pre>
+. .bash_profile
+</pre>
+
+<p>Make sure you include the <code>.</code> dot followed by a space before the <code>.bash_profile</code> above. To test that everything is setup, run the following command:</p>
+
+<pre>
+echo $CLASSPATH
+</pre>
+
+<p>You should see all of the directories you specified in your <code>$CLASSPATH</code> variable. Now, to run Java programs, you can just do:</p>
+
+<pre>
+java ClassName arguments
+</pre>
+
+<p>Assuming that the necessary <code>*.class</code> and <code>*.jar</code> files are located in one of the directories you specified in your <code>$CLASSPATH</code> variable.</p>
+
+<!-- End: Page Body //-->
+
+
+<!-- Beg: Page Footer //-->
+<p class="footer clearfix"><a href="http://usfca.edu/">University of San Francisco</a> &bullet; <a href="http://www.cs.usfca.edu/">Department of Computer Science</a> &bullet; Built with <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>, <a href="http://jekyllrb.com/">Jekyll</a>, and <a href="http://pages.github.com/">GitHub Pages</a>
+</p>
+<!-- End: Page Footer //-->
+
+</div>
+<!-- End: Page Container //-->
+
+</body>
+</html>
+
