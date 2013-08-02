@@ -5,73 +5,51 @@
 <title>CS Tutoring Center</title>
 
 <meta charset="utf-8">
+
+<!-- Required for Bootstrap 3.0 //-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
 
-<!-- Beg: Bootstrap //-->
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<!-- GlyphIcons from http://glyphicons.getbootstrap.com/ //-->
+<link rel="stylesheet" href="/css/bootstrap-glyphicons.css">
 
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
-<!-- End: Bootstrap //-->
-
-<!-- Beg: Custom Styles //-->
+<!-- Google Web Fonts //-->
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700">
-<link rel="stylesheet" href="/css/cstutors.css">
-<!-- End: Custom Styles //-->
 
-
-<!--
-    Konami Code:    https://github.com/snaptortoise/konami-js
-    Asteroids Game: http://www.websiteasteroids.com/
-//-->
-<script type="text/javascript" src="/js/konami.js"></script>
-
-<script type="text/javascript">
-    var konami = new Konami("javascript:var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='http://www.websiteasteroids.com/asteroids.min.js';void(0);");
-    konami.pattern = "38384040373937396665";
-</script>
-
-
-
-
-<link rel="stylesheet" href="/css/syntax.css">
+<!-- Custom Styles //-->
 <link rel="stylesheet" href="/css/cstutors.css">
 </head>
 
 <body>
 <!-- Beg: Navigation //-->
 <div class="navbar navbar-static-top navbar-inverse">
-    <div class="navbar-inner">
+    <!-- Shown When Collapsed //-->
+    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        Navigation <span class="glyphicon glyphicon-chevron-down"></span>
+    </button>
 
-        <!-- Shown When Collapsed //-->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        Navigation <i class="icon-chevron-down icon-white"></i>
-        </a>
+    <!-- Site Brand Always Visible //-->
+    <a class="navbar-brand" href="">CS Tutoring Center</a>
 
-        <a class="brand" href="#">CS Tutoring Center</a>
+    <!-- Shown Links When Expanded //-->
+    <div class="nav-collapse collapse navbar-responsive-collapse">
 
-        <!-- Shown When Expanded //-->
-        <div class="nav-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li ><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 
-            <ul class="nav pull-left">
-                <li ><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+            <li ><a href="/tutors/"><span class="glyphicon glyphicon-user"></span> Tutors</a></li>
 
-                <li ><a href="/tutors/"><i class="icon-user icon-white"></i> Tutors</a></li>
+            <li class="active"><a href="/calendar/"><span class="glyphicon glyphicon-calendar"></span> Calendar</a></li>
 
-                <li class="active"><a href="/calendar/"><i class="icon-calendar icon-white"></i> Calendar</a></li>
+            <li ><a href="/resources/"><span class="glyphicon glyphicon-book"></span> Resources</a></li>
+        </ul>
 
-                <li ><a href="/resources/"><i class="icon-book icon-white"></i> Resources</a></li>
-            </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li ><a href="/about/"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
 
-            <ul class="nav pull-right">
-                <li ><a href="/about/"><i class="icon-info-sign icon-white"></i> About</a></li>
-
-                <li ><a href="/contact/"><i class="icon-envelope icon-white"></i> Contact</a></li>
-            </ul>
-        </div>
-
+            <li ><a href="/contact/"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+        </ul>
     </div>
 </div>
 <!-- End: Navigation //-->
@@ -80,17 +58,25 @@
 <!-- Beg: Page Container //-->
 <div class="container">
 <!-- Beg: Page Header //-->
-<h1 class="page-header">Calendar</h1>
-<p class="lead">The CS Tutoring Center is open weekday afternoons and/or evenings during the semester, and hosts various workshops and social events throughout the year. See the calendar below for details.</p>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-12">
+        <h1 class="page-header">Calendar</h1>
+        <p class="lead">The CS Tutoring Center is open weekday afternoons and/or evenings during the semester, and hosts various workshops and social events throughout the year. See the calendar below for details.</p>
+    </div>
+</div>
 <!-- End: Page Header //-->
 
 <!-- Beg: Page Body //-->
-<br/>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-12">
+        <br/>
 
 <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=cs.usfca.edu_0vp77rogo6di14mf3oi8ppmqs8%40group.calendar.google.com&amp;color=%235A6986&amp;ctz=America%2FLos_Angeles" style=" border-width:0 " width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 
 <p class="text-center muted">You can subscribe to this calendar by clicking the <strong>+Google Calendar</strong> button or using the <a href="http://www.google.com/calendar/ical/cs.usfca.edu_0vp77rogo6di14mf3oi8ppmqs8%40group.calendar.google.com/public/basic.ics">iCal feed</a>.</p>
 
+    </div>
+</div>
 <!-- End: Page Body //-->
 
 
@@ -101,6 +87,9 @@
 
 </div>
 <!-- End: Page Container //-->
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
 
 </body>
 </html>

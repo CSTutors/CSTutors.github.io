@@ -5,73 +5,51 @@
 <title>CS Tutoring Center</title>
 
 <meta charset="utf-8">
+
+<!-- Required for Bootstrap 3.0 //-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
 
-<!-- Beg: Bootstrap //-->
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<!-- GlyphIcons from http://glyphicons.getbootstrap.com/ //-->
+<link rel="stylesheet" href="/css/bootstrap-glyphicons.css">
 
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
-<!-- End: Bootstrap //-->
-
-<!-- Beg: Custom Styles //-->
+<!-- Google Web Fonts //-->
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700">
-<link rel="stylesheet" href="/css/cstutors.css">
-<!-- End: Custom Styles //-->
 
-
-<!--
-    Konami Code:    https://github.com/snaptortoise/konami-js
-    Asteroids Game: http://www.websiteasteroids.com/
-//-->
-<script type="text/javascript" src="/js/konami.js"></script>
-
-<script type="text/javascript">
-    var konami = new Konami("javascript:var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='http://www.websiteasteroids.com/asteroids.min.js';void(0);");
-    konami.pattern = "38384040373937396665";
-</script>
-
-
-
-
-<link rel="stylesheet" href="/css/syntax.css">
+<!-- Custom Styles //-->
 <link rel="stylesheet" href="/css/cstutors.css">
 </head>
 
 <body>
 <!-- Beg: Navigation //-->
 <div class="navbar navbar-static-top navbar-inverse">
-    <div class="navbar-inner">
+    <!-- Shown When Collapsed //-->
+    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        Navigation <span class="glyphicon glyphicon-chevron-down"></span>
+    </button>
 
-        <!-- Shown When Collapsed //-->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        Navigation <i class="icon-chevron-down icon-white"></i>
-        </a>
+    <!-- Site Brand Always Visible //-->
+    <a class="navbar-brand" href="">CS Tutoring Center</a>
 
-        <a class="brand" href="#">CS Tutoring Center</a>
+    <!-- Shown Links When Expanded //-->
+    <div class="nav-collapse collapse navbar-responsive-collapse">
 
-        <!-- Shown When Expanded //-->
-        <div class="nav-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li ><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 
-            <ul class="nav pull-left">
-                <li ><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+            <li ><a href="/tutors/"><span class="glyphicon glyphicon-user"></span> Tutors</a></li>
 
-                <li ><a href="/tutors/"><i class="icon-user icon-white"></i> Tutors</a></li>
+            <li ><a href="/calendar/"><span class="glyphicon glyphicon-calendar"></span> Calendar</a></li>
 
-                <li ><a href="/calendar/"><i class="icon-calendar icon-white"></i> Calendar</a></li>
+            <li ><a href="/resources/"><span class="glyphicon glyphicon-book"></span> Resources</a></li>
+        </ul>
 
-                <li ><a href="/resources/"><i class="icon-book icon-white"></i> Resources</a></li>
-            </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li ><a href="/about/"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
 
-            <ul class="nav pull-right">
-                <li ><a href="/about/"><i class="icon-info-sign icon-white"></i> About</a></li>
-
-                <li ><a href="/contact/"><i class="icon-envelope icon-white"></i> Contact</a></li>
-            </ul>
-        </div>
-
+            <li ><a href="/contact/"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+        </ul>
     </div>
 </div>
 <!-- End: Navigation //-->
@@ -80,14 +58,20 @@
 <!-- Beg: Page Container //-->
 <div class="container">
 <!-- Beg: Page Header //-->
-<h1 class="page-header">About CS Accounts</h1>
-<p class="muted text-right" style="margin-top: -4ex;"><small><em>by Sophie Engle on Jul 2013</em></small></p>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-12">
+        <h1 class="page-header">About CS Accounts</h1>
+        <p class="muted text-right" style="margin-top: -2ex;"><small><em>by Sophie Engle on Jul 2013</em></small></p>
 
-<p class="lead">This guide will explain the difference between your USF Connect account and your CS account, as well as how to check if your account is setup.</p>
+        <p class="lead">This guide will explain the difference between your USF Connect account and your CS account, as well as how to check if your account is setup.</p>
+    </div>
+</div>
 <!-- End: Page Header //-->
 
 <!-- Beg: Page Body //-->
-<h2>Account Basics</h2>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-12">
+        <h2>Account Basics</h2>
 
 <p>Your CS account shares the same username as your USF Connect account, but <em>different</em> passwords. You should use your CS account for the following purposes:</p>
 
@@ -124,13 +108,13 @@
 <p>If you have an account setup, you should see something like this:<p>
 
 
-<ul class="thumbnails">
-    <li class="span6">
+<div class="row" style="margin-bottom: 1ex;">
+    <div class="col-lg-6 col-sm-8 col-12">
         <a href="/assets/about-test.png" class="thumbnail">
-            <img src="/assets/about-test.png" width="100%">
+            <img src="/assets/about-test.png" width="100%" class="img-responsive">
         </a>
-    </li>
-</ul>
+    </div>
+</div>
 
 
 <p>If you see the above image, then you have an account setup. If you are unable to login, double check that you are trying to login using the LAST six digits of your student ID.</p>
@@ -138,17 +122,19 @@
 <p>Your account is not setup yet if you see something like this instead:</p>
 
 
-<ul class="thumbnails">
-    <li class="span6">
+<div class="row" style="margin-bottom: 1ex;">
+    <div class="col-lg-6 col-sm-8 col-12">
         <a href="/assets/about-nowhere.png" class="thumbnail">
-            <img src="/assets/about-nowhere.png" width="100%">
+            <img src="/assets/about-nowhere.png" width="100%" class="img-responsive">
         </a>
-    </li>
-</ul>
+    </div>
+</div>
 
 
 <p>If this is the case, please contact <a href="http://cs.usfca.edu/support.html">CS Support</a> at <a href="mailto:support@cs.usfca.edu">support@cs.usfca.edu</a> to have a CS account setup for you.</p>
 
+    </div>
+</div>
 <!-- End: Page Body //-->
 
 
@@ -159,6 +145,9 @@
 
 </div>
 <!-- End: Page Container //-->
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
 
 </body>
 </html>

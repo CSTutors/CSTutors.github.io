@@ -1,25 +1,55 @@
 
+/* Font Customization */
+
 body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 15px;
 }
 
+.lead {
+  font-weight: 300;
+}
+
+.jumbotron {
+  margin-top: 40px;
+}
+
+dd {
+  margin-left: 1.5em;
+}
+
+/* Code Customization */
+
 code,
 pre {
-  font-family: "Source Code Pro", monospace;
   color: #383838;
+  font-family: "Source Code Pro", monospace;
   font-size: 100%;
   font-weight: 300;
 }
 
 code {
-  padding: 0 2px;
+  padding: 1px 4px;
   margin: 0;
 }
 
-.navbar .brand, .lead, .hero-unit {
+/* Navbar Customization */
+
+.navbar-inverse .navbar-brand {
+  color: white;
   font-weight: 300;
 }
+
+.navbar-toggle {
+  color: white;
+  width: auto;
+}
+
+.navbar {
+  font-weight: 300;
+}
+
+/* Footer Customization */
 
 .footer, .footer a, .footer a:hover {
   color: #bbbbbb;

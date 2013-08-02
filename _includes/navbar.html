@@ -1,34 +1,31 @@
 <!-- Beg: Navigation //-->
 <div class="navbar navbar-static-top navbar-inverse">
-    <div class="navbar-inner">
+    <!-- Shown When Collapsed //-->
+    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        Navigation <span class="glyphicon glyphicon-chevron-down"></span>
+    </button>
 
-        <!-- Shown When Collapsed //-->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        Navigation <i class="icon-chevron-down icon-white"></i>
-        </a>
+    <!-- Site Brand Always Visible //-->
+    <a class="navbar-brand" href="{{ site.url }}">{{ site.name }}</a>
 
-        <a class="brand" href="#">{{ site.name }}</a>
+    <!-- Shown Links When Expanded //-->
+    <div class="nav-collapse collapse navbar-responsive-collapse">
 
-        <!-- Shown When Expanded //-->
-        <div class="nav-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li {% if page.title == 'Home' %}class="active"{% endif %}><a href="{{ site.url }}/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 
-            <ul class="nav pull-left">
-                <li {% if page.title == 'Home' %}class="active"{% endif %}><a href="{{ site.url }}/"><i class="icon-home icon-white"></i> Home</a></li>
+            <li {% if page.title == 'Tutors' %}class="active"{% endif %}><a href="{{ site.url }}/tutors/"><span class="glyphicon glyphicon-user"></span> Tutors</a></li>
 
-                <li {% if page.title == 'Tutors' %}class="active"{% endif %}><a href="{{ site.url }}/tutors/"><i class="icon-user icon-white"></i> Tutors</a></li>
+            <li {% if page.title == 'Calendar' %}class="active"{% endif %}><a href="{{ site.url }}/calendar/"><span class="glyphicon glyphicon-calendar"></span> Calendar</a></li>
 
-                <li {% if page.title == 'Calendar' %}class="active"{% endif %}><a href="{{ site.url }}/calendar/"><i class="icon-calendar icon-white"></i> Calendar</a></li>
+            <li {% if page.title == 'Resources' %}class="active"{% endif %}><a href="{{ site.url }}/resources/"><span class="glyphicon glyphicon-book"></span> Resources</a></li>
+        </ul>
 
-                <li {% if page.title == 'Resources' %}class="active"{% endif %}><a href="{{ site.url }}/resources/"><i class="icon-book icon-white"></i> Resources</a></li>
-            </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li {% if page.title == 'About' %}class="active"{% endif %}><a href="{{ site.url }}/about/"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
 
-            <ul class="nav pull-right">
-                <li {% if page.title == 'About' %}class="active"{% endif %}><a href="{{ site.url }}/about/"><i class="icon-info-sign icon-white"></i> About</a></li>
-
-                <li {% if page.title == 'Contact' %}class="active"{% endif %}><a href="{{ site.url }}/contact/"><i class="icon-envelope icon-white"></i> Contact</a></li>
-            </ul>
-        </div>
-
+            <li {% if page.title == 'Contact' %}class="active"{% endif %}><a href="{{ site.url }}/contact/"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+        </ul>
     </div>
 </div>
 <!-- End: Navigation //-->
