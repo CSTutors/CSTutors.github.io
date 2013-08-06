@@ -1,0 +1,93 @@
+---
+layout: post
+title:  'Using SVN via Eclipse and Subclipse'
+author: 'Sophie Engle'
+date:   2013-08-05
+lead: 'This guide shows you how to use SVN via Eclipse using the Subclipse plugin (like, for example, when you test your code remotely on the lab computers).'
+---
+
+<h2>Installing Subclipse</h2>
+
+<p>You will need to install the <a href="http://subclipse.tigris.org/">Subclipse</a> plugin to connect your code in Eclipse to your SVN repository.</p>
+
+<p>In Eclipse, go to "Help &raquo; Install New Software..." from the toolbar.  We are currently running Subversion version 1.6.x, so you need to place the link <a href="http://subclipse.tigris.org/update_1.6.x">http://subclipse.tigris.org/update_1.6.x</a> in the "Work with" field and press Enter. Select "Subclipse" and click the "Next" button.</p>
+
+{% assign thumbnail="svnsubclipse-install.png" %}
+{% include thumbnail.html %}
+
+<p>Follow the prompts to install and restart Eclipse. When Eclipse opens again, go to "Eclipse &raquo; Preferences" in the toolbar. Select "Team &raquo; SVN" from the left-side navigation tree. You may get this warning message:</p>
+
+{% assign thumbnail="svnsubclipse-javahlwarning.png" %}
+{% include thumbnail.html %}
+
+<p>Go ahead and click "OK". In the preferences, change the "Client" value under "SVN Interface" to "SVNKit (Pure Java)" and click the "Apply" then "OK" buttons.</p>
+
+{% assign thumbnail="svnsubclipse-svnkitprefs.png" %}
+{% include thumbnail.html %}
+
+<p>Now, you have Eclipse and Subclipse all setup! Next, you will create your first SVN-linked Java Project.</p>
+
+<h2>SVN Repository Setup</h2>
+
+<p>To create a Java Project in Eclipse that is connected to your SVN repository, you need to first setup your SVN repository in Eclipse. Open Eclipse, and then select "Window &raquo; Open Perspective &raquo; Other" from the toolbar. You'll see the following window pop up:</p>
+
+{% assign thumbnail="svnsubclipse-svnperspective.png" %}
+{% include thumbnail.html %}
+
+<p>Select "SVN Repository Exploring" from the window and click "OK". Your perspective should change as follows:</p>
+
+{% assign thumbnail="svnsubclipse-svnrepository.png" %}
+{% include thumbnail.html %}
+
+<p>Click the icon with the SVN text and plus symbol (see above). Enter your SVN repository in the window that opens up. Your SVN repository is:</p>
+
+<pre>
+https://www.cs.usfca.edu/svn/username
+</pre>
+
+<p>where username should be replaced with your CS username. It is very important that your SVN repository starts with <code>https://</code> otherwise you will run into problems.</p>
+
+{% assign thumbnail="svnsubclipse-addrepo.png" %}
+{% include thumbnail.html %}
+
+<p>You should be prompted for a password. This is your CS account password, not your USF Connect password. If you have trouble accessing your account, please contact <a href="http://cs.usfca.edu/support.html">CS Support</a>.</p>
+
+<p>You should then see your repository show up. Right-click your repository and select "New &raquo; New Remote Folder" from the menu. Enter the folder name specified by your course.</p>
+
+{% assign thumbnail="svnsubclipse-cs212folder.png" %}
+{% include thumbnail.html %}
+
+<p>For example, CS 212 Software Development uses <code>cs212</code> in all lowercase as the folder name. You must enter this part EXACTLY with all lowercase letters, otherwise you will run into submission problems in the future.</p>
+
+<h2>Java Project SVN Setup</h2>
+
+<p>To create a Java project that is connected to your SVN repository, you need to first create a folder in your repository. Go to the SVN Repository perspective by clicking "Window &raquo; Open Perspective &raquo; Other &raquo; SVN Repository Exploring", and open your SVN repository. Right-click on your <code>cs212</code> folder (or whichever specified by your course) and select "New &raquo; New Remote Folder".</p>
+
+<p>Lets assume you are working on the first homework. In that case, you need to create a folder named <code>homework01</code> (in all lowercase).</p>
+
+{% assign thumbnail="svnsubclipse-homework01.png" %}
+{% include thumbnail.html %}
+
+<p>After clicking "Finish", right-click your new <code>homework01</code> folder and select "Checkout" from the menu. You should see the following window:</p>
+
+{% assign thumbnail="svnsubclipse-checkoutnew.png" %}
+{% include thumbnail.html %}
+
+<p>When you click the "Finish" button, you'll see another pop up window. Select "Java &raquo; Java Project" and click "Next".</p>
+
+{% assign thumbnail="svnsubclipse-javaproject.png" %}
+{% include thumbnail.html %}
+
+<p>Enter <code>homework01</code> as the project name and click "Finish". If you are asked to switch to the Java Perspective, click "Remember my decision" and the "Yes" button. You can add your first file to the Java Project by right-clicking the "src" directory and selecting "New &raquo; Class" from the menu.</p>
+
+<p>Now, you can right-click and select "Team" to access SVN commands like <code>commit</code> and <code>update</code>. You can tell whether your files need to be committed by looking at the icon decorations in Eclipse:</p>
+
+{% assign thumbnail="svnsubclipse-icons.png" %}
+{% include thumbnail.html %}
+
+<p>A file that is marked as "dirty" needs to be committed, an "unversioned" file hasn't been added to your SVN repository yet, and so on. See the other <a href="{{% site.url %}}/resources/">Resources</a> for more basics on using SVN.</p>
+
+<h2>Alternate Walkthrough</h2>
+
+<iframe src="https://docs.google.com/file/d/0BxYofk0iB_updDRFZ2N0bXZOdXM/preview?pli=1" width="100%" height="600"></iframe>
+
