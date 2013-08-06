@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>CS Tutoring Center</title>
+
+<meta charset="utf-8">
+
+<!-- Required for Bootstrap 3.0 //-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
+
+<!-- GlyphIcons from http://glyphicons.getbootstrap.com/ //-->
+<link rel="stylesheet" href="/css/bootstrap-glyphicons.css">
+
+<!-- Google Web Fonts //-->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700">
+
+<!-- Custom Styles //-->
+<link rel="stylesheet" href="/css/cstutors.css">
+</head>
+
+<body>
+<!-- Beg: Navigation //-->
+<div class="navbar navbar-static-top navbar-inverse">
+    <!-- Shown When Collapsed //-->
+    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        Navigation <span class="glyphicon glyphicon-chevron-down"></span>
+    </button>
+
+    <!-- Site Brand Always Visible //-->
+    <a class="navbar-brand" href="">CS Tutoring Center</a>
+
+    <!-- Shown Links When Expanded //-->
+    <div class="nav-collapse collapse navbar-responsive-collapse">
+
+        <ul class="nav navbar-nav">
+            <li ><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+
+            <li ><a href="/tutors/"><span class="glyphicon glyphicon-user"></span> Tutors</a></li>
+
+            <li ><a href="/calendar/"><span class="glyphicon glyphicon-calendar"></span> Calendar</a></li>
+
+            <li ><a href="/resources/"><span class="glyphicon glyphicon-book"></span> Resources</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+            <li ><a href="/about/"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+
+            <li ><a href="/contact/"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+        </ul>
+    </div>
+</div>
+<!-- End: Navigation //-->
+
+
+<!-- Beg: Page Container //-->
+<div class="container">
+<!-- Beg: Page Header //-->
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-12">
+        <h1 class="page-header">Setting Up Java and Eclipse</h1>
+        <p class="muted text-right" style="margin-top: -2ex;"><small><em>by Sophie Engle on Aug 2013</em></small></p>
+
+        <p class="lead">Several classes use Java and Eclipse. This guide helps you install the correct version of both. However, you should double-check which version of Java and Eclipse are being used by your courses and are currently running on the lab computers.</p>
+    </div>
+</div>
+<!-- End: Page Header //-->
+
+<!-- Beg: Page Body //-->
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-12">
+        <h2>Install Java</h2>
+
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"><img src="http://download.oracle.com/technetwork/java/get-java/getjavasesdk-180x150.png" alt="Get Java SE SDK" border="0" width="180" height="150"/></a></p>
+
+<p>Java is in process of transitioning from Java 6 to Java 7. Check which version your course expects you to use. Either way, make sure you download the <strong>Java Developer Kit (JDK)</strong> and not the Java Runtime Environment (JRE). The JRE is required to run Java code, and is automatically included in the JDK which is required to write and compile Java code.</p>
+
+<h3>Java 7</h3>
+
+<p>To download Java 7, go to the following URL:</p>
+
+<ul>
+    <li style="list-style-type: none;"><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a></li>
+</ul>
+
+<p>Download the latest Java 7 JDK (not JRE) for your operating system.</p>
+
+<h3>Java 6</h3>
+
+<p>To download Java 6, go to the following URL:</p>
+
+<ul>
+    <li style="list-style-type: none;"><a href="http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html">http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html</a></li>
+</ul>
+
+<p>Download the latest "Java SE Development Kit" (JDK) for your operating system.</p>
+
+<h2>Install Eclipse</h2>
+
+<p><a href="http://www.eclipse.org/"><img src="/assets/setupjava-eclipselogo.jpg" width="200"></a></p>
+
+<p>See <a href="http://wiki.eclipse.org/Eclipse/Installation">http://wiki.eclipse.org/Eclipse/Installation</a> for installation instructions from Eclipse and <a href="http://help.eclipse.org/">http://help.eclipse.org/</a> for general Eclipse help.</p>
+
+<h3>Latest Version</h3>
+
+<p>You are welcome to install the latest version of Eclipse on your home system, no matter what is installed on the lab computers. However, if you do intend to switch between the lab computers and your home system frequently, you may want to use the same version on both.</p>
+
+<p>To download the latest version of Eclipse, go to:</p>
+
+<ul>
+    <li style="list-style-type: none;"><a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a></li>
+</ul>
+
+<p>Make sure you download the "Eclipse IDE for Java Developers" for your operating system.</p>
+
+<h3>Lab Version</h3>
+
+<p>There is sometimes a disconnect between the packages available for Eclipse under Ubuntu, and the latest version of Eclipse available. As a result, the lab computers may be running an older version of Eclipse.</p>
+
+<p>As of Fall 2013, the lab computers will be running Eclipse version 3.7 (Indigo) instead of the latest version. Download this version at:</p>
+
+<ul>
+    <li style="list-style-type: none;"><a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/indigosr2">http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/indigosr2</a></li>
+</ul>
+
+<p>Download the Indigo 3.7.x version of "Eclipse IDE for Java Developers" for your operating system.</p>
+
+<h2>Mac and Java</h2>
+
+<p><img src="/assets/setupjava-maclogo.png" height="200"></p>
+
+<p>You may have some issues running Java 7 and Eclipse 3.7.2 in Mac OSX. You can see this bug report:</p>
+
+<ul>
+    <li style="list-style-type: none;"><a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=374791">https://bugs.eclipse.org/bugs/show_bug.cgi?id=374791</a></li>
+</ul>
+
+<p>Long story short, even though you might be using Java 7 to write code, you may need to reinstall Apple's version of the Java 6 JRE to run Eclipse AFTER you install the Java 7 JDK. To do this, go to the following URL:</p>
+
+<ul>
+    <li style="list-style-type: none;"><a href="http://support.apple.com/kb/dl1572">http://support.apple.com/kb/dl1572</a></li>
+</ul>
+
+<p>After rebooting, hopefully Eclipse will startup without a problem.</p>
+
+<h2>Configuring Eclipse</h2>
+
+
+<div class="row" style="margin-bottom: 1ex;">
+    <div class="col-lg-6 col-sm-8 col-12">
+        <a href="/assets/setupjava-configjre.png" class="thumbnail">
+            <img src="/assets/setupjava-configjre.png" class="img-responsive" style="max-width: 100%;">
+        </a>
+    </div>
+</div>
+
+
+<p>If you have multiple JREs installed (such as both Java 6 and Java 7), you can <a href="http://help.eclipse.org/indigo/topic/org.eclipse.jdt.doc.user/reference/preferences/java/debug/ref-installed_jres.htm">choose which one to use</a> in the Eclipse preferences. For more help configuring Eclipse, see the other <a href="/resources/">Resources</a>.</p>
+
+    </div>
+</div>
+<!-- End: Page Body //-->
+
+
+<!-- Beg: Page Footer //-->
+<p class="footer clearfix"><a href="http://usfca.edu/">University of San Francisco</a> &bullet; <a href="http://www.cs.usfca.edu/">Department of Computer Science</a> &bullet; Built with <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>, <a href="http://jekyllrb.com/">Jekyll</a>, and <a href="http://pages.github.com/">GitHub Pages</a>
+</p>
+<!-- End: Page Footer //-->
+
+</div>
+<!-- End: Page Container //-->
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
