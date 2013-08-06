@@ -1,0 +1,31 @@
+---
+layout: post
+title:  'Enabling Assertions in Eclipse'
+author: 'Sophie Engle'
+date:   2013-08-05
+lead: 'Assertions are another tool you can use to help debug and test your Java code. However, assertions are not enabled by default in Eclipse. This guide will show you how to enable assertions for a specific Java project, or by default in Eclipse for all Java projects.'
+---
+
+<h2>Per-Project Settings</h2>
+
+<p>In Eclipse, select "Run &raquo; Run Configurations..." from the menu bar. This will open up a dialog window. If you do not already have a run configuration for the current file, go ahead and create one. Otherwise, select the "Arguments" tab and enter <code>-ea</code> in the "VM Arguments" text box as follows:</p>
+
+{% assign thumbnail="eclipseassertions-runconfig.png" %}
+{% include thumbnail.html %}
+
+<p>When you run this file, Eclipse should automatically use the run configuration you setup and enable assertions. A simple way to test if assertions are enabled is to put an <code>assert false;</code> statement in your <code>main</code> method. You should see an <code>AssertionError</code>. If so, you can remove that line from your code. Otherwise, examine your run configuration again.</p>
+
+<h2>Eclipse-Wide Settings</h2>
+
+<p>If you always want assertions enabled for any Java project you run in Eclipse, you have to change the settings for your installed JREs. Go to the Eclipse Preferences window (either "Window &raquo; Preferences" or "Eclipse &raquo; Preferences" from the menu bar). Open the "Java" submenu, and select "Installed JREs". You should see something similar to:</p>
+
+{% assign thumbnail="eclipseassertions-installedjres.png" %}
+{% include thumbnail.html %}
+
+<p>Select the JREs you have installed and click the "Edit" button. Here, you need to add <code>-ea</code> to the default VM arguments as follows:</p>
+
+{% assign thumbnail="eclipseassertions-vmarg.png" %}
+{% include thumbnail.html %}
+
+<p>Click "Finish" and test it out. For example, add an <code>assert false;</code> statement in code that does not have the <code>-ea</code> flag turned on in the run configuration. You should still see the <code>AssertionError</code> output to the console.</p>
+
