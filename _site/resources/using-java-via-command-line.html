@@ -85,7 +85,7 @@ javac *.java
 
 <h3>Step 2: Execute</h3>
 
-<p>To run your code, you need to know which class has the main() method. To execute your code, run the following command:</p>
+<p>To run your code, you need to know which class has the <code>main()</code> method. To execute your code, run the following command:</p>
 
 <pre>
 java -cp "." ClassName
@@ -156,6 +156,22 @@ java ClassName arguments
 </pre>
 
 <p>Assuming that the necessary <code>*.class</code> and <code>*.jar</code> files are located in one of the directories you specified in your <code>$CLASSPATH</code> variable.</p>
+
+<h2>JUnit Tests</h2>
+
+<p>You can run JUnit tests via the command-line on the lab computers. You need to make sure your classpath is setup (see above) first. To run your tests, you can use the following command:</p>
+
+<pre>
+java org.junit.runner.JUnitCore ClassName
+</pre>
+
+<p>Replace <code>ClassName</code> with the name of the class with the JUnit tests. For example, suppose the JUnit tests are located in a file named <code>Tester.java</code>. After you have compiled the source code, you can use the following command to run those tests:</p>
+
+<pre>
+java org.junit.runner.JUnitCore Tester
+</pre>
+
+<p>You will get some basic text output telling you how many tests you passed or failed.</p>
 
     </div>
 </div>
