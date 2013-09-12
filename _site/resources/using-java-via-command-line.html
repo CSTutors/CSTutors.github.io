@@ -71,61 +71,13 @@
 <!-- Beg: Page Body //-->
 <div class="row">
     <div class="col-lg-12 col-sm-12 col-12">
-        <h2>Basics</h2>
+        <h2>Lab Setup</h2>
 
-<h3>Step 1: Compile</h3>
+<p>You need to set your <code>$CLASSPATH</code> variable on the lab computers, or you will be stuck specifying long classpath parameters every time you run <code>java</code>. This becomes especially important when you start using third-party libraries and must include multiple jar files.</p>
 
-<p>Make sure you are currently in the directory with your source code files. Remember, Java source code is always stored a <code>*.java</code> file. You first need to compile these files using Java. To do this, run the following command:</p>
+<p>To do this, you will need to edit a configuration file in your home account. See the <a href="/resources/using-linux-via-command-line.html">Using Linux via Command Line</a> guide if you are unfamiliar using a text editor via the command line prior to completing this guide.</p>
 
-<pre>
-javac *.java
-</pre>
-
-<p>Now, when you <code>ls</code> your directory, you should notice you also have <code>*.class</code> files. Those are the files necessary to execute your Java code.</p>
-
-<h3>Step 2: Execute</h3>
-
-<p>To run your code, you need to know which class has the <code>main()</code> method. To execute your code, run the following command:</p>
-
-<pre>
-java -cp "." ClassName
-</pre>
-
-<p>Replace <code>ClassName</code> with the classname (no file extension) that contains your <code>main()</code> method. The <code>-cp "."</code> part tells the <code>java</code> tool to look for your <code>*.class</code> files in the current directory.</p>
-
-<h2>Arguments</h2>
-
-<p>If you want to provide command-line arguments to your program, just include those arguments after the class name:</p>
-
-<pre>
-java -cp "." ClassName arg1 arg2 arg3 ...
-</pre>
-
-<p>Replace <code>arg1 arg2 arg3 ...</code> with your command-line arguments (separated by spaces). For example, suppose the class <code>Driver</code> takes a filename as an argument. To execute your code with the argument, run the following command:</p>
-
-<pre>
-java -cp "." Driver hello.txt
-</pre>
-
-<p>If you must specify a file name with a space inside it, use quotes around the filename:</p>
-
-<pre>
-java -cp "." Driver "Hello World.txt"
-</pre>
-
-<h2>Jar Files</h2>
-
-<p>If you have already packaged your <code>*.class</code> files in a <code>*.jar</code> file, you can skip compiling your code with <code>javac</code>. To execute your code, run the following command:</p>
-
-<pre>
-java -cp filename.jar ClassName arguments
-</pre>
-
-<p>Replace <code>filename.jar</code> with the name of your jar file (assuming it is in the current directory). For this to work, your <code>*.jar</code> file must contain ALL of the necessary classes for your program to run.</p>
-
-<h2>Class Path</h2>
-
-<p>You can set your <code>$CLASSPATH</code> variable on the lab computers so you no longer have to specify the <code>-cp</code> argument. This becomes especially important when you start using third-party libraries and must include multiple jar files. To do this, change to your home directory (run <code>cd ~</code> at the prompt) and open the <code>.bash_profile</code> file. If it does not exist yet, go ahead and create it. Add the following line to the file:</p>
+<p>Change to your home directory (run <code>cd ~</code> at the prompt) and open the <code>.bash_profile</code> file. If it does not exist yet, go ahead and create it. Add the following line to the file:</p>
 
 <pre>
 export CLASSPATH=".:.*"
@@ -149,13 +101,71 @@ export CLASSPATH="$CLASSPATH:/home/public/cs212/libraries/*"
 echo $CLASSPATH
 </pre>
 
-<p>You should see all of the directories you specified in your <code>$CLASSPATH</code> variable. Now, to run Java programs, you can just do:</p>
+<p>You should see all of the directories you specified in your <code>$CLASSPATH</code> variable.</p>
+
+<h2>Compile</h2>
+
+<p>Make sure you are currently in the directory with your source code files. Remember, Java source code is always stored a <code>*.java</code> file. You first need to compile these files using Java. To do this, run the following command:</p>
 
 <pre>
-java ClassName arguments
+javac *.java
 </pre>
 
-<p>Assuming that the necessary <code>*.class</code> and <code>*.jar</code> files are located in one of the directories you specified in your <code>$CLASSPATH</code> variable.</p>
+<p>Now, when you <code>ls</code> your directory, you should notice you also have <code>*.class</code> files. Those are the files necessary to execute your Java code.</p>
+
+<p>A common error if you do not have your classpath setup properly will be similar to:</p>
+
+<pre>error: package org.junit does not exist</pre>
+
+<p>In this case, <code>javac</code> cannot figure out where the third-party libraries like <code>junit</code> are located. Double-check that your classpath is setup correctly.</p>
+
+<h2>Execute</h2>
+
+<p>To run your code, you need to know which class has the <code>main()</code> method. To execute your code, run the following command:</p>
+
+<pre>
+java ClassName
+</pre>
+
+<p>Replace <code>ClassName</code> with the classname (no file extension) that contains your <code>main()</code> method. If you have not setup your classpath yet, you need to also provide a <code>-cp "."</code> parameter to tell the <code>java</code> tool to look for your <code>*.class</code> files in the current directory.</p>
+
+<p>A common error if you do not have your classpath setup properly will be similar to:</p>
+
+<pre>
+Exception in thread "main" java.lang.NoClassDefFoundError:
+</pre>
+
+<p>In this case, <code>javac</code> cannot figure out where the class files are located. Double-check that your classpath is setup correctly and that your code is properly compiled.</p>
+
+<h2>Arguments</h2>
+
+<p>If you want to provide command-line arguments to your program, just include those arguments after the class name:</p>
+
+<pre>
+java ClassName arg1 arg2 arg3 ...
+</pre>
+
+<p>Replace <code>arg1 arg2 arg3 ...</code> with your command-line arguments (separated by spaces). For example, suppose the class <code>Driver</code> takes a filename as an argument. To execute your code with the argument, run the following command:</p>
+
+<pre>
+java Driver hello.txt
+</pre>
+
+<p>If you must specify a file name with a space inside it, use quotes around the filename:</p>
+
+<pre>
+java Driver "Hello World.txt"
+</pre>
+
+<h2>Jar Files</h2>
+
+<p>If you have already packaged your <code>*.class</code> files in a <code>*.jar</code> file, you can skip compiling your code with <code>javac</code>. To execute your code, run the following command:</p>
+
+<pre>
+java -cp filename.jar ClassName arguments
+</pre>
+
+<p>Replace <code>filename.jar</code> with the name of your jar file (assuming it is in the current directory). For this to work, your <code>*.jar</code> file must contain ALL of the necessary classes for your program to run.</p>
 
 <h2>JUnit Tests</h2>
 
