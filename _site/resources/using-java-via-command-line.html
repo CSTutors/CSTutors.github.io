@@ -95,13 +95,34 @@ export CLASSPATH="$CLASSPATH:/home/public/cs212/libraries/*"
 . .bash_profile
 </pre>
 
-<p>Make sure you include the <code>.</code> dot followed by a space before the <code>.bash_profile</code> above. To test that everything is setup, run the following command:</p>
+<p>Make sure you include the <code>.</code> dot followed by a space before the <code>.bash_profile</code> above.</p>
+
+<p>To test that everything is setup, try the following command:</p>
+
+<pre>
+cat ~/.bash_profile
+</pre>
+
+<p>You should see somewhere in the output the following lines (there may be other lines as well):</p>
+
+<pre>
+export CLASSPATH=".:./*"
+export CLASSPATH="$CLASSPATH:/home/public/cs212/libraries/*"
+</pre>
+
+<p>If that looks correct, run the following command as well:</p>
 
 <pre>
 echo $CLASSPATH
 </pre>
 
-<p>You should see all of the directories you specified in your <code>$CLASSPATH</code> variable.</p>
+<p>If it is setup correctly, you will see something similar to the following:</p>
+
+<pre>
+.:./*:/home/public/cs212/libraries/*
+</pre>
+
+<p>You should see all of the directories you specified in your <code>$CLASSPATH</code> variable above. (It is okay if there are extra directories in the output.)</p>
 
 <h2>Compile</h2>
 
