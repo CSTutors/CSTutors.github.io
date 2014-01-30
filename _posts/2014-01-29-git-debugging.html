@@ -1,0 +1,56 @@
+---
+layout: post
+title:  'Git and SSH Debugging'
+author: 'Chris Boyce'
+date:   2014-01-29
+lead: 'This guide covers some common troubleshooting methods when connecting to Git'
+---
+
+<h2>SSH Permissions</h2>
+
+<p>On your local machine, make sure your permissions are correct on you SSH keys.  The default keys will be named <strong>id_rsa</strong> and <strong>id_rsa.pub</strong>.</p>
+
+<pre>
+chmod 600 ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa.pub
+</pre>
+
+<p>In addition, ensure that the <strong>known_hosts</strong> and <strong>.ssh</strong> directory both have the correct permissions set.</p>
+
+<pre>
+chmod 644 ~/.ssh/known_hosts
+chmod 755 ~/.ssh
+</pre>
+
+<h2>SSH Agent</h2>
+
+<p>The SSH agent provides a way to store one or more SSH keys during your session. This allows you to connect to other hosts without explicitly specifying which key to use each time.  To ensure that your SSH agent is working and has the correct keys, use the following commands:</p>
+
+<pre>
+ssh-add -D
+exec ssh-agent bash
+ssh-add ~/.ssh/id_rsa
+</pre>
+
+<p>Your should be prompted to enter your passphrase, and receive an "Identity added" confirmation message.</p>
+
+<h2>Trying It Out</h2>
+
+<p>You can run the following command to verify that you can connect to Git through SSH:</p>
+
+<pre>
+ssh git@www.cs.usfca.edu info
+</pre>
+
+<p>If successful, you should see output similar to this:</p>
+
+<pre>
+$ ssh git@www.cs.usfca.edu info
+hello cdboyce, this is git@www running gitolite3 v3.5.1-8-gd8fa068 on git 1.7.1
+
+ R W    cdboyce
+</pre>
+
+<h2>Getting More Help</h2>
+
+<p>If you have questions, or if you continue to have difficulties, please contact <a href="mailto:support@cs.usfca.edu">support@cs.usfca.edu</a></p>
