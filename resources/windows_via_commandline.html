@@ -57,7 +57,7 @@
 <div class="row">
     <div class="col-lg-12 col-sm-12 col-12">
         <h1 class="page-header">Using Windows via Command Line</h1>
-        <p class="muted text-right" style="margin-top: -2ex;"><small><em>by Carlos Aguilera on Feburary 2017</em></small></p>
+        <p class="muted text-right" style="margin-top: -2ex;"><small><em>created by Carlos Aguilera</em></small><br><small><em>updated on June 2017</em></small></p>
 
         <p class="lead">The Lab machines are linux based and some of you have Macintosh or Windows. This tutorial will <br>
         cover using windows via command line and also using Cygwin, a linux-like environment.</p>
@@ -77,7 +77,7 @@
 <p>Before we enter any commands, you should understand a little more about the console output. Look at the window below:</p>
 <div class="row" style="margin-bottom: 1ex;">
     <div class="col-lg-6 col-sm-8 col-12">
-        <a href="/assets/windows_command_prompt" class="thumbnail">
+        <a href="/assets/windows_command_prompt.png" class="thumbnail">
             <img src="/assets/windows_command_prompt.png" class="img-responsive" style="max-width: 100%;">
         </a>
     </div>
@@ -87,8 +87,8 @@
 In UNIX based systems to list the content in the current directory we type <code>ls</code>. In windows we type <code>dir</code>.
 </p>
 <div class="col-lg-6 col-sm-8 col-12">
-  <a href="assets/windows_dir_execution" class="thumbnail">
-    <img src="/asstes/windows_dir_execution.png" class="img-responsive" style="max-width: 100%;">
+  <a href="assets/windows_dir_execution.png" class="thumbnail">
+    <img src="/assets/windows_dir_execution.png" class="img-responsive" style="max-width: 100%;">
   </a>
 </div>
 <p>
@@ -96,21 +96,61 @@ In UNIX based systems to list the content in the current directory we type <code
 
   Installing Cygwin
 
-  Follow this link to the installation page: <a href="https://cygwin.com/install.html" class="thumbnail"> Install Cygwin</a>
+  You can follow this guide or you can follow this guide: <a href="http://www.mcclean-cooper.com/valentino/cygwin_install/"> http://www.mcclean-cooper.com/valentino/cygwin_install/</a> which is where I got the photos.
+  Follow this link to the installation page: <a href="https://cygwin.com/install.html"> Install Cygwin</a>
   Be sure to download the setup-x86.exe for either the 32-bit or 64-bit depending on the version of windows you are runnning.
 
-Once the download completes run the executable. Hit next until you reach the 'Choose a download source.' Then choose install from internet. Press next and choose the directory of where you want to install Cygwin. The default root directory is fine if you don't wish to specifiy the location.
+Once the download completes run the executable. Hit next until you reach the 'Choose a download source.'
 
+<a href="assets/internet_install.gif" class="thumbnail">
+  <img src="/assets/internet_install.gif" class="img-responsive" style="max-width: 100%;">
+</a>
+Then choose install from internet. Press next and choose the directory of where you want to install Cygwin. The default root directory is fine if you don't wish to specifiy the location.
+
+<a href="assets/root_dir.gif" class="thumbnail">
+  <img src="/assets/root_dir.gif" class="img-responsive" style="max-width: 100%;">
+</a>
 Hit next and then you pick where downloads will be place if you want to add extra features to the Cygwin environment.
-Hit next and choose the appropriate option of internet connection. If you are not sure choose direct connection. Then choose a download site. (The websites are
-mirrors of the original cygwin website but just servers to relieve server traffic under a different url). Hit next and then the download will commence.
+
+<a href="assets/installation_dir.gif" class="thumbnail">
+  <img src="/assets/installation_dir.gif" class="img-responsive" style="max-width: 100%;">
+</a>
+
+Hit next and choose the appropriate option of internet connection. If you are not sure choose direct connection.
+
+<a href="assets/connection_type.gif" class="thumbnail">
+  <img src="/assets/connection_type.gif" class="img-responsive" style="max-width: 100%;">
+</a>
+
+Then choose a download site. (The websites are
+mirrors of the original cygwin website but just servers to relieve server traffic under a different url).
+
+<a href="assets/Downloadsite.gif" class="thumbnail">
+  <img src="/assets/Downloadsite.gif" class="img-responsive" style="max-width: 100%;">
+</a>
+
+Hit next to pick the packages you want. Some of the packages you would want are
+<ul class="nav navbar-nav">
+  <li>Openssh</li>
+  <li>Python</li>
+  <li>keychain</li>
+  <li>GNU compiler or gcc</li>
+  <li>gdb</li>
+  <li>vi</li>
+  <li>emacs</li>
+  <li>git</li>
+  <li>make</li>
+  <li>subversion</li>
+  <li>bash</li>
+</ul>
+Some of this packages might not be needed for you class but they will be needed in future classes. However, if you want to add packages later you can. You just go through the same steps above except downloading the installer and then get the packages part and install anything else you need.
+Hit next until the installation begins.
 
 Cygwin Console
 
-After installing Cygwin, we can use command prompt to run unix commands such as <code>ls</code> the only downside is that we cannot execute programs or scripts in a unix based terminal fashion. Therefore, the tutorial will now concern itself with the Cygwin console.
+After installing Cygwin, we can use cygwin to run unix commands such as <code>ls</code> the only downside is that we cannot execute programs or scripts in a unix based terminal fashion. Therefore, the tutorial will now concern itself with the Cygwin console.
 
-
-Manual Pages
+You can either jump to <a href="_site/resources/using-linux-via-command-line.html">Using Linux via Command Line</a> or continue on this tutorial.
 </p>
     </body>
 </html>
