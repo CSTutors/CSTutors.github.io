@@ -4,7 +4,7 @@
         <title>CS Tutoring Center</title>
 
         <meta charset="utf-8">
-        
+
     <!-- Required for Bootstrap 3.0 //-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
@@ -60,8 +60,8 @@
         <p class="muted text-right" style="margin-top: -2ex;"><small><em>by Carlos Aguilera on Feburary 2017</em></small></p>
 
         <p class="lead">The Lab machines are linux based and some of you have Macintosh or Windows. This tutorial will <br>
-        cover using windows via command line and also using Cygwin, a linux-like environment.</p> 
-        
+        cover using windows via command line and also using Cygwin, a linux-like environment.</p>
+
 
     </div>
 </div>
@@ -83,7 +83,34 @@
     </div>
 </div>
 
-<p> The text to the left with the <code>></code> at the end gives basic information such as the current directory or folder. In the above example, the user is <code>Carlos</code>. We can tell because we are under the Users directory and in Carlos. Unfortunatley, windows does not have ssh capabilities. What we can do is install cygwin to assist us. However, below we will cover the basic windows commands.</p>
+<p> The text to the left with the <code>></code> at the end gives basic information such as the current directory or folder. In the above example, the user is <code>Carlos</code>. We can tell because we are under the Users directory and in Carlos. Unfortunatley, windows does not have ssh capabilities. What we can do is install cygwin to assist us. However, below we will cover the basic windows commands.
+In UNIX based systems to list the content in the current directory we type <code>ls</code>. In windows we type <code>dir</code>.
+</p>
+<div class="col-lg-6 col-sm-8 col-12">
+  <a href="assets/windows_dir_execution" class="thumbnail">
+    <img src="/asstes/windows_dir_execution.png" class="img-responsive" style="max-width: 100%;">
+  </a>
+</div>
+<p>
+  In UNIX based systems to change directories we type <code>cd</code>. Convinently, it is the same for windows or alternatively you can use <code>chdir</code> in the command prompt.
 
+  Installing Cygwin
+
+  Follow this link to the installation page: <a href="https://cygwin.com/install.html" class="thumbnail"> Install Cygwin</a>
+  Be sure to download the setup-x86.exe for either the 32-bit or 64-bit depending on the version of windows you are runnning.
+
+Once the download completes run the executable. Hit next until you reach the 'Choose a download source.' Then choose install from internet. Press next and choose the directory of where you want to install Cygwin. The default root directory is fine if you don't wish to specifiy the location.
+
+Hit next and then you pick where downloads will be place if you want to add extra features to the Cygwin environment.
+Hit next and choose the appropriate option of internet connection. If you are not sure choose direct connection. Then choose a download site. (The websites are
+mirrors of the original cygwin website but just servers to relieve server traffic under a different url). Hit next and then the download will commence.
+
+Cygwin Console
+
+After installing Cygwin, we can use command prompt to run unix commands such as <code>ls</code> the only downside is that we cannot execute programs or scripts in a unix based terminal fashion. Therefore, the tutorial will now concern itself with the Cygwin console.
+
+
+Manual Pages
+</p>
     </body>
 </html>
