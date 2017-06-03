@@ -83,7 +83,7 @@
         </div>
 
         <p> The text to the left with the <code>></code> at the end gives basic information such as the current directory or folder. In the above example, the user is <code>Carlos</code>. We can tell because we are under the Users directory and in Carlos. Unfortunatley, windows does not have ssh capabilities. What we can do is install cygwin to assist us. However, below we will cover the basic windows commands.
-          In UNIX based systems to list the content in the current directory we type <code>ls</code>. In windows we type <code>dir</code>.
+          In UNIX based systems to list the content in the current directory we type <kbd>ls</kbd>. In windows we type <kbd>dir</kbd>.
         </p>
         <div class="row" style="margin-bottom: 1ex;">
             <div class="col-lg-6 col-sm-8 col-12">
@@ -94,13 +94,13 @@
         </div>
         <br>
         <p>
-        In UNIX based systems to change directories we type <code>cd</code>. Convinently, it is the same for windows or alternatively you can use <code>chdir</code> in the command prompt.
-        In addition, in windows, <code>cd</code>, tells us the current directory which is helpful if we cannot tell where we are in the directory structure.
-        Another helpful command in windows is <code>copy</code> which works similar to <code>cp</code> in UNIX.
-        So if you need to copy files you can use the <code>copy</code>command in windows.
-        Furthermore, if you want to delete or remove files or directories the <code>rd</code> and <code>del</code> commands are helpful.
-        <code>rd</code> removes directories and <code>rd /s</code> removes directories recursively. <code>rd /s /q </code> removes directories recursively forcefully which is the equivalent of the UNIX <code>rm -rf</code>.
-        <code>del</code> only deletes files so <code>del /f /q</code> deletes a file forcefully.
+        In UNIX based systems to change directories we type <kdb>cd</kbd>. Convinently, it is the same for windows or alternatively you can use <kbd>chdir</kbd> in the command prompt.
+        In addition, in windows, <kbd>cd</kbd>, tells us the current directory which is helpful if we cannot tell where we are in the directory structure.
+        Another helpful command in windows is <kbd>copy</kbd> which works similar to <kbd>cp</kbd> in UNIX.
+        So if you need to copy files you can use the <kbd>copy</kbd>command in windows.
+        Furthermore, if you want to delete or remove files or directories the <kbd>rd</kbd> and <kbd>del</kbd> commands are helpful.
+        <kbd>rd</kbd> removes directories and <kbd>rd /s</kbd> removes directories recursively. <kbd>rd /s /q </kbd> removes directories recursively forcefully which is the equivalent of the UNIX <kbd>rm -rf</kbd>.
+        <kbd>del</kbd> only deletes files so <kbd>del /f /q</kbd> deletes a file forcefully.
         </p>
     </div>
 </div>
@@ -182,7 +182,7 @@
     <div class="col-lg-12 col-sm-12 col-12">
       <h2>Cygwin Console</h2>
       <p>
-        After installing Cygwin, we can use cygwin to run unix commands such as <code>ls</code> the only downside is that we cannot execute programs or scripts in a unix based terminal fashion. Therefore, the tutorial will now concern itself with the Cygwin console.
+        After installing Cygwin, we can use cygwin to run unix commands such as <kbd>ls</kbd> the only downside is that we cannot execute programs or scripts in a unix based terminal fashion. Therefore, the tutorial will now concern itself with the Cygwin console.
       <br>
       You can either jump to <a href="_site/resources/using-linux-via-command-line.html">Using Linux via Command Line</a> or continue on this tutorial.
       <br>
@@ -194,49 +194,49 @@
       <h2>Linux Instructions</h2>
       <p>
       At the beginning of the tutorial I gave UNIX and windows comparisons. You can refer to with this table.
-      <table class="table">
+      <table class="table table-bordered table-hover">
         <thead>
-          <tr class="success">
+          <tr>
             <th>Windows</th>
             <th>UNIX</th>
             <th>Notes</th>
           </tr>
         </thead>
         <tbody>
-        <tr class="success">
-          <th>del</th>
-          <th>rm</th>
-          <th>remove a file</th>
+        <tr>
+          <td><kbd>del</kbd></td>
+          <td class="info">rm</td>
+          <td class="info">remove a file</td>
         </tr>
-        <tr class="success">
-          <th>rd</th>
-          <th>rmdir</th>
-          <th>removes a directory</th>
+        <tr>
+          <td>rd</td>
+          <td>rmdir</td>
+          <td class="info">removes a directory</td>
         </tr>
-        <tr class="success">
-          <th>dir [directory name]</th>
-          <th>ls</th>
-          <th>list the contents of the directory</th>
+        <tr>
+          <td>dir [directory name]</td>
+          <td>ls</td>
+          <td class="info">list the contents of the directory</td>
         </tr>
-        <tr class="success">
-          <th>dir</th>
-          <th>pwd</th>
-          <th>Tells the current directory location</th>
+        <tr>
+          <td>dir</td>
+          <td>pwd</td>
+          <td class="info">Tells the current directory location</td>
         </tr>
-        <tr class="success">
-          <th>cd or chdir</th>
-          <th>cd</th>
-          <th>change the directory</th>
+        <tr>
+          <td>cd or chdir</td>
+          <td>cd</td>
+          <td class="info">change the directory</td>
         </tr>
-        <tr class="success">
-          <th>rd /s /q </th>
-          <th> rm -rf </th>
-          <th>remove the directory recursively and forcefully</th>
+        <tr>
+          <td>rd /s /q </td>
+          <td> rm -rf </td>
+          <td class="info">remove the directory recursively and forcefully</td>
         </tr>
-        <tr class="success">
-          <th>del /f</th>
-          <th>rm</th>
-          <th> delete a file</th>
+        <tr>
+          <td>del /f</td>
+          <td>rm</td>
+          <td class="info"> delete a file</td>
         </tr>
         </tbody>
       </table>
