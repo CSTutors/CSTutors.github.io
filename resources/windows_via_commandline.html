@@ -193,6 +193,47 @@ C:\Users\Carlos\CS110>
     </div>
     Some of this packages might not be needed for you class but they will be needed in future classes. However, if you want to add packages later you can. You just go through the same steps above except downloading the installer and then get the packages part and install anything else you need.
     Hit next until the installation begins.
+    <br>
+    After the installation you will need to add Cygwin to your class path.
+    <br>
+    Select [the windows logo] -> Windows System -> Control Panel
+    <br>
+    In the control panel search for System and select the [Edit the system environment] variables
+    <br>
+    select [Environment Variables]
+    <br>
+     Under user variables select [New] and proceed to add an new variable as follows:
+     <br>
+     Variable name: HOME
+     <br>
+     for the value you want to put the location you would want to act as your
+     home directory. For example C:\\Users\Carlos\Documents but with your
+     username instead of Carlos.
+     <br>
+     Variable value: location of home directory
+     <br>
+     Under the Environmental variables window select Path under "System Variables" window
+     <br>
+     select [edit]
+     <br>
+     Append a new path such as C:\\cygwin\bin and you may need a semicolon depending
+     on the version of windows that you have. If you look at the current Path value
+     you can notice if you need to add a semicolon or not.
+     <br>
+     Select "Ok" to finish editing. Select "Ok" again to finsih editing the
+     environment variables. Select "Ok" to close the System properties.
+     <br>
+     Close the control panel.
+     <br>
+     Next you will create a shortcut for cygwin. I would recommend on the
+     desktop. So go to your desktop right click and select new and then select shortcut.
+     <br>
+     select browse and then find the location of your cygwin terminal.
+     It should be under the location you said to install Cygwin (the default is C:\\cygwin\)
+     then under bin called mintty. So it could look like this C:\\cygwin\bin\mintty.
+     <br>
+     Then select next. Type a name for the shortcut for example Cygwin Terminal.
+     Select [finish].
     </p>
   </div>
 </div>
