@@ -68,8 +68,8 @@ code {
   border-top: 1px solid #eeeeee;
 }
 .tutor-photo {
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   object-position: center;
 }
