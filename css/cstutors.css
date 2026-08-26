@@ -67,3 +67,9 @@ code {
   margin-top: 1.5em;
   border-top: 1px solid #eeeeee;
 }
+.tutor-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+}
