@@ -67,10 +67,15 @@ code {
   margin-top: 1.5em;
   border-top: 1px solid #eeeeee;
 }
-/* img.tutor-photo {
-  width: 150px !important;
-  height: 150px !important;
-  max-width: 150px !important;
-  object-fit: cover;
-  object-position: center;
-} */
+.tutor-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.tutor-classes {
+  font-size: 14px;
+  font-weight: 300;
+  color: #555;
+  max-width: 180px;
+}
